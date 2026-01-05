@@ -6,7 +6,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -294,6 +294,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -354,6 +355,7 @@
             border-radius: 2px;
             transition: all 0.3s ease-in-out;
         }
+
         @media (max-width: 900px) {
 
             .menu-toggle {
@@ -383,6 +385,7 @@
                 transform: translateX(100%);
                 transition: transform 0.3s ease-in-out;
             }
+
             .navbar-links.open {
                 transform: translateX(0);
             }
@@ -427,6 +430,7 @@
             gap: 60px;
             align-items: center;
         }
+
         .hero-content h1 {
             font-family: var(--fonte-titulo);
             font-size: 3.5rem;
@@ -698,6 +702,7 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .service-card {
             flex: 0 0 calc(33.333% - 40px);
             width: calc(33.333% - 20px);
@@ -819,6 +824,7 @@
             .service-card .card-description {
                 font-size: 0.95rem;
             }
+
             .services-carousel-container .carousel-nav-btn {
                 width: 40px;
                 height: 40px;
@@ -961,17 +967,20 @@
             width: 100%;
             background-color: #fdfdfd;
         }
+
         .atendimento-nacional .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .atendimento-grid {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
             gap: 50px;
             align-items: center;
         }
+
         .logo-sna {
             width: 120px;
             margin-bottom: 20px;
@@ -1004,6 +1013,7 @@
             color: var(--azul-principal);
             margin-bottom: 20px;
         }
+
         .lista-estados {
             list-style: none;
             padding: 0;
@@ -1053,6 +1063,7 @@
         .mapa-marker:hover {
             transform: translate(-50%, -50%) scale(1.1);
         }
+
         .marker-1 {
             top: 35%;
             left: 70%;
@@ -1077,6 +1088,7 @@
             font-weight: 700;
             font-size: 1.5rem;
         }
+
         .lista-estados {
             list-style: none;
             padding: 0;
@@ -1103,6 +1115,7 @@
             margin-right: 10px;
             font-size: 1.1rem;
         }
+
         .mapa-card {
             position: absolute;
             background-color: #ffffff;
@@ -1118,11 +1131,13 @@
             transform: translateY(-10px);
             transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
         }
+
         .mapa-card.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         #card-mg {
             top: 5%;
             left: 55%;
@@ -1140,6 +1155,7 @@
             left: 80%;
             transform: translateX(-50%);
         }
+
         #card-pr {
             top: 5%;
             left: 55%;
@@ -1181,6 +1197,7 @@
             color: #111;
             font-weight: 600;
         }
+
         .mapa-card-button {
             display: inline-block;
             background-color: transparent;
@@ -1218,6 +1235,7 @@
                 top: 5%;
             }
         }
+
         @media (max-width: 480px) {
             .lista-estados {
                 grid-template-columns: 1fr;
@@ -1227,6 +1245,7 @@
                 font-size: 2rem;
             }
         }
+
         .site-footer {
             position: relative;
             background-color: var(--azul-principal);
@@ -1244,6 +1263,7 @@
         .site-footer a:hover {
             color: var(--amarelo-gold);
         }
+
         .footer-main {
             padding-bottom: 50px;
         }
@@ -1298,6 +1318,7 @@
             margin-bottom: 0;
             line-height: 1.7;
         }
+
         .contact-list {
             list-style: none;
             padding: 0;
@@ -1384,6 +1405,7 @@
             font-weight: 500;
             letter-spacing: 0.3px;
         }
+
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -1417,6 +1439,7 @@
             color: var(--azul-principal);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
         }
+
         @media (max-width: 992px) {
             .footer-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1504,18 +1527,6 @@
                 margin-right: 10px;
             }
         }
-        .mapa-google {
-            line-height: 0;
-            height: 450px;
-            overflow: hidden;
-        }
-
-        .mapa-google iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
 
         .mapa-google {
             line-height: 0;
@@ -1529,6 +1540,20 @@
             border: 0;
             display: block;
         }
+
+        .mapa-google {
+            line-height: 0;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .mapa-google iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
         .footer-contact-bar {
             background-color: var(--outro-azul, #222346);
             padding: 40px 0;
@@ -2315,6 +2340,53 @@
             justify-content: center;
             margin-top: 20px;
         }
+
+        /* Novo Botão Exclusivo: Estilo Pílula Dourado */
+        .btn-gold-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 35px;
+            border-radius: 50px;
+            background-color: var(--cor-dourado);
+            color: #0c133f;
+        
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+
+            border: none;
+            box-shadow: 0 4px 15px rgba(203, 167, 118, 0.25);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        /* Efeito Hover */
+        .btn-gold-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(203, 167, 118, 0.4);
+            background-color: #dcb886;
+            /* Dourado levemente mais claro */
+            color: #0c133f;
+        }
+
+        /* Animação do ícone */
+        .btn-gold-pill i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-gold-pill:hover i {
+            transform: translateX(6px);
+        }
+
+        /* Efeito de clique */
+        .btn-gold-pill:active {
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 
@@ -2398,11 +2470,11 @@
                             administrativos e
                             judiciais, e recuperação de créditos tributários.
                         </p>
-                              <div class="container-flex">
-            <a href="servicos.html" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="servicos.html" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Societário</h3>
@@ -2411,11 +2483,11 @@
                             acordos de sócios
                             e assessoria em governança corporativa.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Civil</h3>
@@ -2425,11 +2497,11 @@
                             direito de
                             propriedade e obrigações.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Trabalhista Empresarial</h3>
@@ -2438,11 +2510,11 @@
                             trabalhistas e
                             adequação às normas da legislação vigente.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Administrativo</h3>
@@ -2451,11 +2523,11 @@
                             administrativas, além de
                             consultoria a empresas que contratam com o poder público.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Previdenciário</h3>
@@ -2464,11 +2536,11 @@
                             tanto no âmbito
                             administrativo quanto judicial.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Médico</h3>
@@ -2478,11 +2550,11 @@
                             e
                             indenizatórias decorrentes da prática médica.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Administração de Passivos</h3>
@@ -2492,11 +2564,11 @@
                             credores e
                             estratégias para reduzir riscos e preservar a saúde financeira.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Contratos e Franquias (Franchising)</h3>
@@ -2505,11 +2577,11 @@
                             segurança jurídica e
                             equilíbrio nas relações comerciais.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito Bancário</h3>
@@ -2519,11 +2591,11 @@
                             e orientação
                             sobre práticas financeiras.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Direito do Consumidor Empresarial</h3>
@@ -2532,11 +2604,11 @@
                             conformidade, gestão de
                             risco e imagem institucional.
                         </p>
-                              <div class="container-flex">
-            <a href="#" class="btn-padrao-centro">
-                Saiba mais
-            </a>
-        </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                     <div class="service-card">
                         <h3 class="card-title">Responsabilidade Civil</h3>
@@ -2546,17 +2618,28 @@
                             reparações
                             justas para nossos clientes.
                         </p>
-                <div class="container-flex">
-                    <a href="#" class="btn-padrao-centro">
-                    Saiba mais
-                        </a>
-                </div>
+                        <div class="container-flex">
+                            <a href="#" class="btn-padrao-centro">
+                                Saiba mais
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <button class="carousel-nav-btn prev">&#10094;</button>
                 <button class="carousel-nav-btn next">&#10095;</button>
             </div>
         </div>
+
+        <div class="container-servicos-link">
+            <br><br>
+            <p class="section-subtitle">Deseja conhecer todas as nossas especialidades?</p>
+
+            <a href="https://snadv.com.br/novo/servicos" class="btn-gold-pill">
+                VEJA TODOS OS SERVIÇOS
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
     </section>
 
     <section class="about-section" id="sobre">
@@ -2604,6 +2687,8 @@
 
             </div>
         </section>
+
+
         <section class="about-section" id="sobre">
             <div class="container">
 
