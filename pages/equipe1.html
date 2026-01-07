@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe Jurídica de Elite</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cor-fundo: #0a0c1a;
+            --cor-azul-principal: #0c133f;
+            --cor-azul-mais-escuro: #070914;
+            --cor-dourado: #cba776;
+            --cor-texto: #f0f0f0;
+            --cor-texto-muted: #a0a5b8;
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            background: linear-gradient(135deg, var(--cor-azul-mais-escuro) 0%, var(--cor-fundo) 100%);
+            color: var(--cor-texto);
+            font-family: var(--fonte-corpo);
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 3rem;
+            color: var(--cor-dourado);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--cor-texto-muted);
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--cor-dourado);
+            margin: 20px auto;
+        }
+
+        /* Grid System */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        /* Card Style */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(203, 167, 118, 0.15);
+            padding: 30px 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Efeito de Brilho e Borda no Hover */
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cor-dourado);
+            background: rgba(203, 167, 118, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(203, 167, 118, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(203, 167, 118, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        /* Foto do Advogado */
+        .photo-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid var(--cor-dourado);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cor-azul-principal);
+            font-size: 2rem;
+            color: var(--cor-dourado);
+        }
+
+        /* Informações */
+        .info {
+            width: 100%;
+        }
+
+        .info h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem;
+            color: var(--cor-dourado);
+            margin-bottom: 5px;
+        }
+
+        .cargo {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--cor-texto-muted);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .details {
+            list-style: none;
+        }
+
+        .details li {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--cor-texto);
+        }
+
+        .details li i {
+            color: var(--cor-dourado);
+            margin-right: 12px;
+            width: 16px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1100px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 650px) {
+            .team-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>NOSSA EQUIPE</h1>
+            <p>Conhecimento Jurídico e Experiência Comprovada</p>
+        </header>
+
+        <div class="team-grid" id="teamGrid">
+            </div>
+    </div>
+
+    <script>
+        // Dados para preencher os 8 cards
+        const advogados = [
+            { nome: "Dr. Arthur Meirelles", oab: "OAB/SP 123.456", especialidade: "Direito Civil" },
+            { nome: "Dra. Beatriz Soares", oab: "OAB/RJ 654.321", especialidade: "Direito Tributário" },
+            { nome: "Dr. Carlos Eduardo", oab: "OAB/MG 789.012", especialidade: "Direito Empresarial" },
+            { nome: "Dra. Daniela Fontes", oab: "OAB/DF 321.987", especialidade: "Causas Complexas" },
+            { nome: "Dr. Estêvão Gomes", oab: "OAB/PR 456.789", especialidade: "Direito Digital" },
+            { nome: "Dra. Fernanda Lima", oab: "OAB/SC 987.654", especialidade: "Direito do Trabalho" },
+            { nome: "Dr. Gabriel Mendes", oab: "OAB/RS 147.258", especialidade: "Direito Penal" },
+            { nome: "Dra. Helena Vaz", oab: "OAB/GO 369.258", especialidade: "Família e Sucessões" }
+        ];
+
+        const grid = document.getElementById('teamGrid');
+
+        advogados.forEach(adv => {
+            grid.innerHTML += `
+                <div class="card">
+                    
+                    <div class="photo-container">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="info">
+                        <h2>${adv.nome}</h2>
+                        <span class="cargo">Sócio Diretor / ${adv.oab}</span>
+                        <ul class="details">
+                            <li><i class="fa-solid fa-scale-balanced"></i> ${adv.especialidade}</li>
+                            <li><i class="fa-solid fa-award"></i> 15+ Anos de Experiência</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Mestre em Direito</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Casos Complexos</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
