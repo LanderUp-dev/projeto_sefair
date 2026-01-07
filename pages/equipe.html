@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe - Jurídico</title>
+    <style>
+        :root {
+            --bg-color: #1a2a40; /* Azul marinho do fundo */
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --gold: #d4af37;
+            --text-light: #ffffff;
+            --text-muted: #a0aec0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Grid Responsivo */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Card do Advogado */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Efeito Hover: Borda Dourada Brilha */
+        .card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .photo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .info h3 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .info .role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .details li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Estilização para Mobile */
+        @media (max-width: 1024px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; } /* Layout 1 Coluna */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>NOSSA EQUIPE</h1>
+        <p>Conhecimento Jurídico e Experiência Comprovada</p>
+    </div>
+
+    <div class="team-grid">
+        <div class="card">
+            <div class="photo-placeholder">FOTO</div>
+            <div class="info">
+                <h3>Nome do Advogado</h3>
+                <span class="role">Cargo / OAB</span>
+                <ul class="details">
+                    <li>⚖️ Especialidade: Civil</li>
+                    <li>📖 15+ Anos de Experiência</li>
+                    <li>🏛️ Mestre em Direito</li>
+                    <li>📄 Casos Complexos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo-placeholder">FOTO</div>
+            <div class="info">
+                <h3>Nome do Advogado</h3>
+                <span class="role">Cargo / OAB</span>
+                <ul class="details">
+                    <li>⚖️ Especialidade: Civil</li>
+                    <li>📖 15+ Anos de Experiência</li>
+                    <li>🏛️ Mestre em Direito</li>
+                    <li>📄 Casos Complexos</li>
+                </ul>
+            </div>
+        </div>
+        
+        </div>
+
+</body>
+</html>
