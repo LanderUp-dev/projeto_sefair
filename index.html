@@ -521,7 +521,6 @@
         .about-section {
             background-color: var(--cor-fundo-claro);
             color: var(--cor-texto-escuro);
-            padding: 80px 0;
             margin-top: -1px;
         }
 
@@ -1388,7 +1387,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .footer-bottom .container {
+        .footer-bottom .containerfooter {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1484,7 +1483,7 @@
                 justify-content: center;
             }
 
-            .footer-bottom .container {
+            .footer-bottom .containerfooter {
                 flex-direction: column;
                 text-align: center;
             }
@@ -1560,7 +1559,7 @@
             color: #f0f0f0;
         }
 
-        .footer-contact-bar .container {
+        .footer-contact-bar .containerfooter {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
@@ -1616,7 +1615,7 @@
             font-size: 0.85rem;
         }
 
-        .footer-bottom .container {
+        .footer-bottom .containerfooter {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
@@ -1711,7 +1710,7 @@
                 font-size: 1.8rem;
             }
 
-            .footer-bottom .container {
+            .footer-bottom .containerfooter {
                 flex-direction: column;
                 justify-content: center;
             }
@@ -2351,7 +2350,7 @@
             border-radius: 50px;
             background-color: var(--cor-dourado);
             color: #0c133f;
-        
+
             text-decoration: none;
             font-size: 1rem;
             font-weight: 700;
@@ -2405,13 +2404,13 @@
                 <span class="hamburger-bar"></span>
             </button>
 
-            <div class="navbar-links" id="navbar-links">
-                <a href="#inicio" class="nav-link">Início</a>
-                <a href="pages/servicos.html" class="nav-link">Serviços</a>
-                <a href="#sobre" class="nav-link">Sobre Nós</a>
-                <a href="#servicos" class="nav-link">Áreas de Atuação</a>
-                <a href="#contato" class="nav-link">Contato</a>
-                 <a href="pages/nossa_equipe.html" class="nav-link">Nossa Equipe</a>
+             <div class="navbar-links" id="navbar-links">
+               <a href="../index.html" class="nav-link">Início</a>
+                <a href="../pages/servico.html" class="nav-link">Serviços</a>
+                <a href="../index.html#sobre" class="nav-link">Sobre Nós</a>
+                <a href="../pages/area_de_atuacao.html" class="nav-link">Áreas de Atuação</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+                <a href="../pages/nossa_equipe.html" class="nav-link">Nossa Equipe</a>
             </div>
         </div>
     </nav>
@@ -2635,7 +2634,7 @@
             <br><br>
             <p class="section-subtitle">Deseja conhecer todas as nossas especialidades?</p>
 
-            <a href="https://snadv.com.br/novo/servicos" class="btn-gold-pill">
+            <a href="../pages/area_de_atuacao" class="btn-gold-pill">
                 VEJA TODOS OS SERVIÇOS
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -2643,7 +2642,7 @@
 
     </section>
 
-    <section class="about-section" id="sobre">
+    <section class="about-section">
         <section class="section-escolher">
             <h2>Por que nos escolher</h2>
 
@@ -3010,7 +3009,7 @@
             </section>
 
             <footer class="footer-contact-bar" id="contato">
-                <div class="container">
+                <div class="containerfooter">
                     <div class="footer-bar-grid">
 
                         <div class="footer-bar-item">
@@ -3362,6 +3361,7 @@
         // In case fonts/images change layout after load
         setTimeout(setEqualServiceCardHeights, 300);
     })();
+    
 </script>
 
 </html>
