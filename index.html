@@ -71,30 +71,16 @@
             --cor-dourado: #cba776;
             --cor-texto: #f0f0f0;
             --fonte-titulo: 'Playfair Display', serif;
-            --fonte-corpo: 'Lato', sans-serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
             --cor-fundo-claro: #f8f8f8;
             --cor-texto-escuro: #333;
-            --cor-amarelo-gold: #cba776;
             --cor-azul-principal: #0c133f;
             --cor-azul-mais-escuro: #2b2c48;
             --cor-outro-azul: #222346;
-            --cor-fundo-claro: #F8F8F8;
             --cor-azul-claro: #E0E7FF;
             --cor-texto-principal: #444444;
-            --fonte-titulo: 'Playfair Display', serif;
-            --fonte-corpo: 'Open Sans', sans-serif;
-            --amarelo-gold: #cba776;
-            --azul-principal: #0c133f;
-            --azul-escuro: #2b2c48;
-            --outro-azul: #222346;
-            --azul-principal: #0c133f;
-            --azul-escuro: #2b2c48;
-            --amarelo-gold: #cba776;
             --branco: #ffffff;
             --fundo-pagina: #f4f6f8;
-            --texto-principal: #0c133f;
-            --texto-escuro: #2b2c48;
-
         }
 
         body {
@@ -108,7 +94,7 @@
             font-family: 'Lato', sans-serif;
             background-color: var(--fundo-pagina);
             line-height: 1.6;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
         }
 
         .section_body h1,
@@ -145,13 +131,13 @@
 
         .coluna-texto h2 {
             font-size: 2.8rem;
-            color: var(--texto-principal);
+            color: var(--cor-azul-principal);
             margin: 0;
         }
 
         .coluna-texto h3 {
             font-size: 1.5rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             font-weight: 600;
             margin-top: 10px;
             margin-bottom: 25px;
@@ -162,22 +148,22 @@
             height: 3px;
             width: 100px;
             margin: 0 0 25px 0;
-            background-image: linear-gradient(to right, var(--amarelo-gold), rgba(203, 167, 118, 0.5));
+            background-image: linear-gradient(to right, var(--cor-dourado), rgba(203, 167, 118, 0.5));
         }
 
         .coluna-texto p {
             font-size: 1rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             margin-bottom: 20px;
             opacity: 0.9;
         }
 
         .coluna-texto h4 {
             font-size: 1.3rem;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 30px;
             margin-bottom: 15px;
-            border-left: 3px solid var(--amarelo-gold);
+            border-left: 3px solid var(--cor-dourado);
             padding-left: 10px;
         }
 
@@ -191,7 +177,7 @@
 
         .lista-estados li {
             font-size: 0.95rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             transition: transform 0.3s ease, color 0.3s ease;
             display: grid;
             grid-template-columns: 25px 1fr;
@@ -201,13 +187,13 @@
 
         .lista-estados li:hover {
             transform: translateX(5px);
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             cursor: default;
         }
 
         .lista-estados li::before {
             content: '✓';
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-weight: bold;
             font-size: 1.1rem;
             display: flex;
@@ -376,7 +362,6 @@
                 width: 100%;
                 height: 100vh;
                 background-color: var(--cor-fundo);
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -524,6 +509,10 @@
             margin-top: -1px;
         }
 
+        #sobre {
+            padding: 80px 0;
+        }
+
         .about-section .container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -657,7 +646,7 @@
         .section-title {
             font-family: var(--fonte-titulo);
             font-size: 3rem;
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             margin-bottom: 20px;
         }
 
@@ -730,7 +719,7 @@
         .service-card .card-title {
             font-family: var(--fonte-titulo);
             font-size: 1.8rem;
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             margin-bottom: 15px;
             font-weight: 600;
         }
@@ -749,7 +738,7 @@
             top: 50%;
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.5);
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             border: none;
             padding: 0;
             cursor: pointer;
@@ -788,7 +777,7 @@
         }
 
         .dot.active {
-            background-color: var(--cor-amarelo-gold);
+            background-color: var(--cor-dourado);
         }
 
         @media (max-width: 1024px) {
@@ -846,7 +835,7 @@
         }
 
         .why-choose-us-section .section-title {
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             margin-bottom: 60px;
             font-size: 3rem;
         }
@@ -895,7 +884,7 @@
         .reason-icon svg {
             width: 40px;
             height: 40px;
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         .reason-card .card-title {
@@ -987,14 +976,14 @@
 
         .atendimento-texto h2 {
             font-size: 2.5rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             margin-top: 0;
             margin-bottom: 10px;
         }
 
         .atendimento-texto h3 {
             font-size: 1.2rem;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 0;
             margin-bottom: 25px;
             font-weight: 500;
@@ -1009,7 +998,7 @@
 
         .atendimento-texto h4 {
             font-size: 1.1rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             margin-bottom: 20px;
         }
 
@@ -1028,7 +1017,7 @@
         }
 
         .lista-estados i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-right: 10px;
             font-size: 1.1rem;
         }
@@ -1046,7 +1035,7 @@
 
         .mapa-marker {
             position: absolute;
-            background-color: var(--azul-escuro);
+            background-color: var(--cor-azul-mais-escuro);
             color: #fff;
             padding: 5px 10px;
             border-radius: 4px;
@@ -1106,11 +1095,11 @@
         }
 
         .lista-estados li:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         .lista-estados li i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-right: 10px;
             font-size: 1.1rem;
         }
@@ -1121,7 +1110,7 @@
             color: #333;
             padding: 20px;
             border-radius: 8px;
-            border-top: 4px solid var(--amarelo-gold);
+            border-top: 4px solid var(--cor-dourado);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             width: 290px;
             z-index: 10;
@@ -1180,7 +1169,7 @@
 
         .mapa-card-title {
             font-size: 1.3rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             margin-top: 0;
             margin-bottom: 10px;
         }
@@ -1200,8 +1189,8 @@
         .mapa-card-button {
             display: inline-block;
             background-color: transparent;
-            border: 2px solid var(--amarelo-gold);
-            color: var(--amarelo-gold);
+            border: 2px solid var(--cor-dourado);
+            color: var(--cor-dourado);
             padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
@@ -1211,7 +1200,7 @@
         }
 
         .mapa-card-button:hover {
-            background-color: var(--amarelo-gold);
+            background-color: var(--cor-dourado);
             color: #fff;
         }
 
@@ -1247,7 +1236,7 @@
 
         .site-footer {
             position: relative;
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             color: var(--texto-claro);
             line-height: 1.6;
             padding-top: 60px;
@@ -1260,7 +1249,7 @@
         }
 
         .site-footer a:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         .footer-main {
@@ -1275,7 +1264,7 @@
 
         .footer-column {
             padding: 20px;
-            background-color: var(--outro-azul);
+            background-color: var(--cor-outro-azul);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -1292,7 +1281,7 @@
         .footer-title {
             font-size: 1.35rem;
             font-weight: 700;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 0;
             margin-bottom: 25px;
             position: relative;
@@ -1307,7 +1296,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--amarelo-gold);
+            background-color: var(--cor-dourado);
             border-radius: 2px;
         }
 
@@ -1337,7 +1326,7 @@
         }
 
         .contact-list i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.1rem;
             margin-right: 15px;
             width: 20px;
@@ -1349,7 +1338,7 @@
         }
 
         .contact-list a:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         .social-links {
@@ -1364,19 +1353,19 @@
             align-items: center;
             width: 42px;
             height: 42px;
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             border-radius: 50%;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.1rem;
             border: 1px solid rgba(203, 167, 118, 0.3);
             transition: var(--transicao-rapida);
         }
 
         .social-links a:hover {
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             transform: translateY(-4px) rotate(5deg);
-            border-color: var(--amarelo-gold);
+            border-color: var(--cor-dourado);
         }
 
         .footer-bottom {
@@ -1387,7 +1376,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .footer-bottom .containerfooter {
+        .footer-bottom .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1400,7 +1389,7 @@
         }
 
         .footer-bottom .credit a {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-weight: 500;
             letter-spacing: 0.3px;
         }
@@ -1412,8 +1401,8 @@
             display: none;
             width: 50px;
             height: 50px;
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             font-size: 1.3rem;
             border-radius: 50%;
             text-align: center;
@@ -1435,7 +1424,7 @@
 
         .back-to-top:hover {
             background-color: #fff;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
         }
 
@@ -1554,7 +1543,7 @@
         }
 
         .footer-contact-bar {
-            background-color: var(--outro-azul, #222346);
+            background-color: var(--cor-outro-azul, #222346);
             padding: 40px 0;
             color: #f0f0f0;
         }
@@ -1583,7 +1572,7 @@
 
         .footer-bar-item i {
             /* Ícones (telefone, relógio, etc.) */
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             font-size: 1.3rem;
             /* 22px */
             width: 25px;
@@ -1601,7 +1590,7 @@
         }
 
         .footer-bar-item a:hover {
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
         }
 
         /* ===================
@@ -1609,7 +1598,7 @@
 ==================== */
         .footer-bottom {
             /* Usando o 'azul escuro' da sua paleta */
-            background-color: var(--azul-escuro, #2b2c48);
+            background-color: var(--cor-azul-mais-escuro, #2b2c48);
             padding: 20px 0;
             color: #a0a0a0;
             font-size: 0.85rem;
@@ -1632,7 +1621,7 @@
         }
 
         .footer-bottom .credit a {
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             text-decoration: none;
             font-weight: 500;
         }
@@ -1743,14 +1732,14 @@
         }
 
         #map .model .state .shape {
-            fill: var(--amarelo-gold);
+            fill: var(--cor-dourado);
             stroke: var(--mapa-borda-estado);
             stroke-width: 1.5px;
             transition: fill 0.3s ease;
         }
 
         #map .model #state_df .shape {
-            fill: var(--amarelo-gold);
+            fill: var(--cor-dourado);
             stroke: var(--mapa-borda-estado);
             stroke-width: 1px;
             transition: fill 0.3s ease;
@@ -1968,7 +1957,7 @@
         }
 
         .map-info-card {
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             border-radius: 12px;
             padding: 35px 30px 30px 30px;
             width: 90%;
@@ -1994,17 +1983,17 @@
             transform: translateX(-50%);
             width: 50px;
             height: 50px;
-            background-color: var(--azul-escuro);
+            background-color: var(--cor-azul-mais-escuro);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            border: 3px solid var(--amarelo-gold);
+            border: 3px solid var(--cor-dourado);
         }
 
         .card-pin-icon i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.5rem;
         }
 
@@ -2035,8 +2024,8 @@
         /* --- Botão WhatsApp --- */
         .card-whatsapp-button {
             display: inline-block;
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
@@ -2068,7 +2057,7 @@
         }
 
         .card-close-button:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         @media (max-width: 768px) {
@@ -2153,7 +2142,7 @@
 
             /* 1. O fundo "vidro fosco" */
             background-color: rgba(43, 44, 72, 0.25);
-            /* Cor --azul-escuro com 25% de opacidade */
+            /* Cor --cor-azul-mais-escuro com 25% de opacidade */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             /* Para funcionar no Safari */
@@ -2161,7 +2150,7 @@
             /* 2. A "borda" para delimitar o olhar */
             border-radius: 12px;
             border: 1px solid rgba(203, 167, 118, 0.2);
-            /* Borda dourada (seu --amarelo-gold) sutil */
+            /* Borda dourada (seu --cor-dourado) sutil */
 
             /* 3. Espaçamento interno */
             padding: 50px 40px;
@@ -2175,7 +2164,7 @@
             font-family: var(--fonte-titulo, 'Playfair Display', serif);
             font-size: 2.8rem;
             text-align: center;
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             margin-bottom: 60px;
             display: flex;
             align-items: center;
@@ -2219,7 +2208,7 @@
             /* Cor de fundo sutil */
             background-color: var(--cor-azul-mais-escuro, #2b2c48);
             /* Borda dourada */
-            border: 2px solid var(--cor-amarelo-gold, #cba776);
+            border: 2px solid var(--cor-dourado, #cba776);
 
             display: flex;
             align-items: center;
@@ -2236,7 +2225,7 @@
         .tributario-icon i {
             font-size: 2.5rem;
             /* Tamanho do ícone */
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
         }
 
         /* Bloco de Texto (Título e Parágrafo) */
@@ -2245,7 +2234,7 @@
         .tributario-text h3 {
             font-family: var(--fonte-titulo, 'Playfair Display', serif);
             font-size: 2rem;
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             margin-bottom: 15px;
         }
 
@@ -2404,13 +2393,13 @@
                 <span class="hamburger-bar"></span>
             </button>
 
-             <div class="navbar-links" id="navbar-links">
-               <a href="../index.html" class="nav-link">Início</a>
-                <a href="../pages/servico.html" class="nav-link">Serviços</a>
-                <a href="../index.html#sobre" class="nav-link">Sobre Nós</a>
-                <a href="../pages/area_de_atuacao.html" class="nav-link">Áreas de Atuação</a>
-                <a href="../index.html#contato" class="nav-link">Contato</a>
-                <a href="../pages/nossa_equipe.html" class="nav-link">Nossa Equipe</a>
+            <div class="navbar-links" id="navbar-links">
+                <a href="./index.html" class="nav-link">Início</a>
+                <a href="./pages/servico.html" class="nav-link">Serviços</a>
+                <a href="./index.html#sobre" class="nav-link">Sobre Nós</a>
+                <a href="./pages/area_de_atuacao.html" class="nav-link">Áreas de Atuação</a>
+                <a href="./index.html#contato" class="nav-link">Contato</a>
+                <a href="./pages/nossa_equipe.html" class="nav-link">Nossa Equipe</a>
             </div>
         </div>
     </nav>
@@ -2511,7 +2500,7 @@
                             adequação às normas da legislação vigente.
                         </p>
                         <div class="container-flex">
-                            <a href="#" class="btn-padrao-centro">
+                            <a href="./pages/servico_individual.html" class="btn-padrao-centro">
                                 Saiba mais
                             </a>
                         </div>
@@ -2634,7 +2623,7 @@
             <br><br>
             <p class="section-subtitle">Deseja conhecer todas as nossas especialidades?</p>
 
-            <a href="../pages/area_de_atuacao" class="btn-gold-pill">
+            <a href="./pages/area_de_atuacao.html" class="btn-gold-pill">
                 VEJA TODOS OS SERVIÇOS
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -2999,13 +2988,13 @@
 
                     </div>
                 </div>
-                <section class="mapa-google">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.4725670557673!2d-43.35942386455362!3d-21.761964154055168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989b626b2ec1ad%3A0xc819f731e1ce90bf!2sAv.%20Oleg%C3%A1rio%20Maciel%2C%20770%20-%20Paineiras%2C%20Juiz%20de%20Fora%20-%20MG%2C%2036016-011!5e0!3m2!1spt-BR!2sbr!4v1761578856775!5m2!1spt-BR!2sbr"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </section>
+            </section>
+            <section class="mapa-google">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.4725670557673!2d-43.35942386455362!3d-21.761964154055168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989b626b2ec1ad%3A0xc819f731e1ce90bf!2sAv.%20Oleg%C3%A1rio%20Maciel%2C%20770%20-%20Paineiras%2C%20Juiz%20de%20Fora%20-%20MG%2C%2036016-011!5e0!3m2!1spt-BR!2sbr!4v1761578856775!5m2!1spt-BR!2sbr"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </section>
 
             <footer class="footer-contact-bar" id="contato">
@@ -3361,7 +3350,7 @@
         // In case fonts/images change layout after load
         setTimeout(setEqualServiceCardHeights, 300);
     })();
-    
+
 </script>
 
 </html>

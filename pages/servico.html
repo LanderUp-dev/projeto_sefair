@@ -66,49 +66,21 @@
             --mapa-icone-padrao: #7381df;
             --mapa-hover: #7a7a85;
             --mapa-texto-label: #212136;
-            /* --- Variáveis de Estilo (Baseado no Logo) --- */
             --cor-fundo: #0a0c1a;
-            /* Azul bem escuro, quase preto */
             --cor-dourado: #cba776;
-            /* Tom de dourado clássico */
             --cor-texto: #f0f0f0;
-            /* Texto claro (branco-acinzentado) */
-            --fonte-titulo: 'Playfair Display', serif;
-            /* Fonte elegante para títulos */
             --fonte-corpo: 'Lato', sans-serif;
-            /* Fonte limpa para texto */
             --cor-fundo-claro: #f8f8f8;
-            /* Fundo claro para a nova seção */
             --cor-texto-escuro: #333;
-            /* Texto escuro para contraste no fundo claro */
-            --cor-amarelo-gold: #cba776;
             --cor-azul-principal: #0c133f;
             --cor-azul-mais-escuro: #2b2c48;
             --cor-outro-azul: #222346;
-            /* Um tom de azul para títulos/detalhes */
-            /* Dourado */
-            --cor-fundo-claro: #F8F8F8;
-            /* Um cinza muito claro para fundos */
-            --cor-azul-claro: #E0E7FF;
-            /* Um azul pastel para o fundo do ícone */
+            --cor-branco-fosco-escuro: #E0E7FF;
             --cor-texto-principal: #444444;
-            /* Cor de texto para legibilidade */
-            --fonte-titulo: 'Playfair Display', serif;
-            /* Ou sua fonte de título */
             --fonte-corpo: 'Open Sans', sans-serif;
-            /* Ou sua fonte de corpo */
-            --amarelo-gold: #cba776;
-            --azul-principal: #0c133f;
-            --azul-escuro: #2b2c48;
-            --outro-azul: #222346;
-            --azul-principal: #0c133f;
-            --azul-escuro: #2b2c48;
-            --amarelo-gold: #cba776;
             --branco: #ffffff;
             --fundo-pagina: #f4f6f8;
             --texto-principal: #0c133f;
-            --texto-escuro: #2b2c48;
-
         }
 
         body {
@@ -122,7 +94,7 @@
             font-family: 'Lato', sans-serif;
             background-color: var(--fundo-pagina);
             line-height: 1.6;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
         }
 
         .section_body h1,
@@ -165,7 +137,7 @@
 
         .coluna-texto h3 {
             font-size: 1.5rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             font-weight: 600;
             margin-top: 10px;
             margin-bottom: 25px;
@@ -176,22 +148,22 @@
             height: 3px;
             width: 100px;
             margin: 0 0 25px 0;
-            background-image: linear-gradient(to right, var(--amarelo-gold), rgba(203, 167, 118, 0.5));
+            background-image: linear-gradient(to right, var(--cor-dourado), rgba(203, 167, 118, 0.5));
         }
 
         .coluna-texto p {
             font-size: 1rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             margin-bottom: 20px;
             opacity: 0.9;
         }
 
         .coluna-texto h4 {
             font-size: 1.3rem;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 30px;
             margin-bottom: 15px;
-            border-left: 3px solid var(--amarelo-gold);
+            border-left: 3px solid var(--cor-dourado);
             padding-left: 10px;
         }
 
@@ -205,7 +177,7 @@
 
         .lista-estados li {
             font-size: 0.95rem;
-            color: var(--texto-escuro);
+            color: var(--cor-azul-mais-escuro);
             transition: transform 0.3s ease, color 0.3s ease;
             display: grid;
             grid-template-columns: 25px 1fr;
@@ -215,13 +187,13 @@
 
         .lista-estados li:hover {
             transform: translateX(5px);
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             cursor: default;
         }
 
         .lista-estados li::before {
             content: '✓';
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-weight: bold;
             font-size: 1.1rem;
             display: flex;
@@ -331,7 +303,6 @@
         /* Classe .scrolled será adicionada via JS */
         .navbar.scrolled {
             background-color: var(--cor-fundo);
-            /* Fica escuro ao rolar */
             padding: 0px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
@@ -404,7 +375,6 @@
                 width: 100%;
                 height: 100vh;
                 background-color: var(--cor-fundo);
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -714,7 +684,7 @@
         .section-title {
             font-family: var(--fonte-titulo);
             font-size: 3rem;
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             /* Título dourado */
             margin-bottom: 20px;
         }
@@ -825,7 +795,7 @@
             font-family: var(--fonte-titulo);
             font-size: 1.8rem;
             /* Aumentar o tamanho do título para combinar */
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             margin-bottom: 15px;
             font-weight: 600;
             /* Para combinar com o peso da fonte dos outros cards */
@@ -856,7 +826,7 @@
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.5);
             /* Fundo escuro */
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             /* Setas douradas */
             border: none;
             padding: 0;
@@ -903,7 +873,7 @@
         }
 
         .dot.active {
-            background-color: var(--cor-amarelo-gold);
+            background-color: var(--cor-dourado);
         }
 
         /* --- Responsividade (Carrossel de Serviços) --- */
@@ -976,7 +946,7 @@
         }
 
         .why-choose-us-section .section-title {
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
             margin-bottom: 60px;
             font-size: 3rem;
         }
@@ -1026,7 +996,7 @@
         .reason-icon svg {
             width: 40px;
             height: 40px;
-            color: var(--cor-amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         .reason-card .card-title {
@@ -1127,14 +1097,14 @@
 
         .atendimento-texto h2 {
             font-size: 2.5rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             margin-top: 0;
             margin-bottom: 10px;
         }
 
         .atendimento-texto h3 {
             font-size: 1.2rem;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 0;
             margin-bottom: 25px;
             font-weight: 500;
@@ -1149,7 +1119,7 @@
 
         .atendimento-texto h4 {
             font-size: 1.1rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             margin-bottom: 20px;
         }
 
@@ -1170,7 +1140,7 @@
 
         /* Ícones dos estados (Exige Font Awesome) */
         .lista-estados i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-right: 10px;
             font-size: 1.1rem;
         }
@@ -1263,12 +1233,12 @@
         }
 
         .lista-estados li:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             /* Destaque no hover */
         }
 
         .lista-estados li i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-right: 10px;
             font-size: 1.1rem;
         }
@@ -1287,7 +1257,7 @@
             padding: 20px;
             border-radius: 8px;
             /* Borda superior dourada para dar o toque de luxo */
-            border-top: 4px solid var(--amarelo-gold);
+            border-top: 4px solid var(--cor-dourado);
             /* Sombra mais suave e moderna */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             width: 290px;
@@ -1359,7 +1329,7 @@
 
         .mapa-card-title {
             font-size: 1.3rem;
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             /* Título com a cor principal */
             margin-top: 0;
             margin-bottom: 10px;
@@ -1381,8 +1351,8 @@
         .mapa-card-button {
             display: inline-block;
             background-color: transparent;
-            border: 2px solid var(--amarelo-gold);
-            color: var(--amarelo-gold);
+            border: 2px solid var(--cor-dourado);
+            color: var(--cor-dourado);
             padding: 8px 16px;
             /* Um pouco menor */
             border-radius: 5px;
@@ -1393,7 +1363,7 @@
         }
 
         .mapa-card-button:hover {
-            background-color: var(--amarelo-gold);
+            background-color: var(--cor-dourado);
             color: #fff;
             /* Texto branco no hover */
         }
@@ -1438,7 +1408,7 @@
 ==================== */
         .site-footer {
             position: relative;
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             color: var(--texto-claro);
             line-height: 1.6;
             padding-top: 60px;
@@ -1452,7 +1422,7 @@
         }
 
         .site-footer a:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         /* Conteúdo principal do rodapé (colunas) */
@@ -1470,7 +1440,7 @@
 
         .footer-column {
             padding: 20px;
-            background-color: var(--outro-azul);
+            background-color: var(--cor-azul-mais-escuro);
             /* Fundo de card para cada coluna */
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1492,7 +1462,7 @@
             font-size: 1.35rem;
             /* Levemente maior */
             font-weight: 700;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             margin-top: 0;
             margin-bottom: 25px;
             position: relative;
@@ -1510,7 +1480,7 @@
             /* Linha um pouco maior */
             height: 3px;
             /* Linha mais grossa */
-            background-color: var(--amarelo-gold);
+            background-color: var(--cor-dourado);
             border-radius: 2px;
         }
 
@@ -1543,7 +1513,7 @@
         }
 
         .contact-list i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.1rem;
             margin-right: 15px;
             width: 20px;
@@ -1557,7 +1527,7 @@
         }
 
         .contact-list a:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
 
@@ -1578,10 +1548,10 @@
             /* Maior */
             height: 42px;
             /* Maior */
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             /* Fundo dos ícones */
             border-radius: 50%;
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.1rem;
             /* Maior */
             border: 1px solid rgba(203, 167, 118, 0.3);
@@ -1590,11 +1560,11 @@
         }
 
         .social-links a:hover {
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             transform: translateY(-4px) rotate(5deg);
             /* Efeito mais dinâmico */
-            border-color: var(--amarelo-gold);
+            border-color: var(--cor-dourado);
         }
 
         /* Barra inferior (Copyright) */
@@ -1623,7 +1593,7 @@
         }
 
         .footer-bottom .credit a {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-weight: 500;
             letter-spacing: 0.3px;
         }
@@ -1642,8 +1612,8 @@
             /* Maior */
             height: 50px;
             /* Maior */
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             font-size: 1.3rem;
             /* Ícone maior */
             border-radius: 50%;
@@ -1670,7 +1640,7 @@
         .back-to-top:hover {
             background-color: #fff;
             /* Fundo branco no hover */
-            color: var(--azul-principal);
+            color: var(--cor-azul-principal);
             /* Cor do ícone mantém */
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
         }
@@ -1812,7 +1782,7 @@
 ==================== */
         .footer-contact-bar {
             /* Usando o 'outro azul' da sua paleta */
-            background-color: var(--outro-azul, #222346);
+            background-color: var(--cor-azul-mais-escuro, #222346);
             padding: 40px 0;
             color: #f0f0f0;
         }
@@ -1841,7 +1811,7 @@
 
         .footer-bar-item i {
             /* Ícones (telefone, relógio, etc.) */
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             font-size: 1.3rem;
             /* 22px */
             width: 25px;
@@ -1859,7 +1829,7 @@
         }
 
         .footer-bar-item a:hover {
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
         }
 
         /* ===================
@@ -1890,7 +1860,7 @@
         }
 
         .footer-bottom .credit a {
-            color: var(--amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             text-decoration: none;
             font-weight: 500;
         }
@@ -2001,14 +1971,14 @@
         }
 
         #map .model .state .shape {
-            fill: var(--amarelo-gold);
+            fill: var(--cor-dourado);
             stroke: var(--mapa-borda-estado);
             stroke-width: 1.5px;
             transition: fill 0.3s ease;
         }
 
         #map .model #state_df .shape {
-            fill: var(--amarelo-gold);
+            fill: var(--cor-dourado);
             stroke: var(--mapa-borda-estado);
             stroke-width: 1px;
             transition: fill 0.3s ease;
@@ -2226,7 +2196,7 @@
         }
 
         .map-info-card {
-            background-color: var(--azul-principal);
+            background-color: var(--cor-azul-principal);
             border-radius: 12px;
             padding: 35px 30px 30px 30px;
             width: 90%;
@@ -2258,11 +2228,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            border: 3px solid var(--amarelo-gold);
+            border: 3px solid var(--cor-dourado);
         }
 
         .card-pin-icon i {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
             font-size: 1.5rem;
         }
 
@@ -2293,8 +2263,8 @@
         /* --- Botão WhatsApp --- */
         .card-whatsapp-button {
             display: inline-block;
-            background-color: var(--amarelo-gold);
-            color: var(--azul-principal);
+            background-color: var(--cor-dourado);
+            color: var(--cor-azul-principal);
             padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
@@ -2326,7 +2296,7 @@
         }
 
         .card-close-button:hover {
-            color: var(--amarelo-gold);
+            color: var(--cor-dourado);
         }
 
         @media (max-width: 768px) {
@@ -2419,7 +2389,7 @@
             /* 2. A "borda" para delimitar o olhar */
             border-radius: 12px;
             border: 1px solid rgba(203, 167, 118, 0.2);
-            /* Borda dourada (seu --amarelo-gold) sutil */
+            /* Borda dourada (seu --cor-dourado) sutil */
 
             /* 3. Espaçamento interno */
             padding: 50px 40px;
@@ -2433,7 +2403,7 @@
             font-family: var(--fonte-titulo, 'Playfair Display', serif);
             font-size: 2.8rem;
             text-align: center;
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             margin-bottom: 60px;
             display: flex;
             align-items: center;
@@ -2477,7 +2447,7 @@
             /* Cor de fundo sutil */
             background-color: var(--cor-azul-mais-escuro, #2b2c48);
             /* Borda dourada */
-            border: 2px solid var(--cor-amarelo-gold, #cba776);
+            border: 2px solid var(--cor-dourado, #cba776);
 
             display: flex;
             align-items: center;
@@ -2494,7 +2464,7 @@
         .tributario-icon i {
             font-size: 2.5rem;
             /* Tamanho do ícone */
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
         }
 
         /* Bloco de Texto (Título e Parágrafo) */
@@ -2503,7 +2473,7 @@
         .tributario-text h3 {
             font-family: var(--fonte-titulo, 'Playfair Display', serif);
             font-size: 2rem;
-            color: var(--cor-amarelo-gold, #cba776);
+            color: var(--cor-dourado, #cba776);
             margin-bottom: 15px;
         }
 
@@ -2608,8 +2578,8 @@
                 <span class="hamburger-bar"></span>
             </button>
 
-                <div class="navbar-links" id="navbar-links">
-               <a href="../index.html" class="nav-link">Início</a>
+            <div class="navbar-links" id="navbar-links">
+                <a href="../index.html" class="nav-link">Início</a>
                 <a href="../pages/servico.html" class="nav-link">Serviços</a>
                 <a href="../index.html#sobre" class="nav-link">Sobre Nós</a>
                 <a href="../pages/area_de_atuacao.html" class="nav-link">Áreas de Atuação</a>
