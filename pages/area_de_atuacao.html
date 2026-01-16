@@ -10,6 +10,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+    <link rel="shortcut icon"
+        href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+        type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -440,6 +457,186 @@
     border: 1px dashed #333;
     border-radius: 8px;
 }
+
+        .footer-contact-bar {
+            background-color: var(--cor-outro-azul, #222346);
+            padding: 40px 0;
+            color: #f0f0f0;
+        }
+
+        .footer-contact-bar .containerfooter {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Novo layout em Grid */
+        .footer-bar-grid {
+            display: grid;
+            /* Cria colunas automáticas que se ajustam */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            /* Espaço entre os itens */
+        }
+
+        .footer-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* Espaço entre o ícone e o texto */
+        }
+
+        .footer-bar-item i {
+            /* Ícones (telefone, relógio, etc.) */
+            color: var(--cor-dourado, #cba776);
+            font-size: 1.3rem;
+            /* 22px */
+            width: 25px;
+            text-align: center;
+        }
+
+        .footer-bar-item a,
+        .footer-bar-item span {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            /* 15px */
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bar-item a:hover {
+            color: var(--cor-dourado, #cba776);
+        }
+
+        /* ===================
+   3. ESTILOS DA BARRA DE COPYRIGHT (NOVO)
+==================== */
+        .footer-bottom {
+            /* Usando o 'azul escuro' da sua paleta */
+            background-color: var(--cor-azul-mais-escuro, #2b2c48);
+            padding: 20px 0;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .containerfooter {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Para quebrar no celular */
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom .credit a {
+            color: var(--cor-dourado, #cba776);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-bottom .credit a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===================
+   4. ESTILOS DO BOTÃO WHATSAPP (NOVO)
+==================== */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 65px;
+            right: 25px;
+            z-index: 100;
+            background-color: #25D366;
+            /* Cor oficial do WhatsApp */
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            /* Arredondado */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp i {
+            font-size: 1.5rem;
+            /* Tamanho do ícone */
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===================
+   RESPONSIVIDADE
+==================== */
+        @media (max-width: 768px) {
+            .footer-bar-grid {
+                /* No celular, os itens ficam um embaixo do outro */
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-bar-item {
+                /* Centraliza os itens */
+                justify-content: center;
+                text-align: center;
+            }
+
+            /* Esconde o texto do botão no celular, mostrando só o ícone */
+            .floating-whatsapp span {
+                display: none;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                /* Círculo */
+                height: 55px;
+                /* Círculo */
+                padding: 0;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+
+            .floating-whatsapp i {
+                font-size: 1.8rem;
+            }
+
+            .footer-bottom .containerfooter {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* No celular, o item de endereço pode ficar muito grande */
+            .footer-bar-item {
+                justify-content: flex-start;
+                /* Alinha à esquerda */
+                text-align: left;
+            }
+        }
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
   </style>
 </head>
 
@@ -497,6 +694,45 @@
       </div>
     </section>
   </main>
+  <footer class="footer-contact-bar" id="contato">
+      <div class="containerfooter">
+          <div class="footer-bar-grid">
+
+              <div class="footer-bar-item">
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:3232171981">(32) 3217-1981 / (32) 9 9123-3714</a>
+              </div>
+
+              <div class="footer-bar-item">
+                  <i class="fas fa-clock"></i>
+                  <span>Segunda a Sexta-feira: 9h00 - 18h30</span>
+              </div>
+
+              <div class="footer-bar-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Av: Olegário Maciel, 770 Santa Helena, Juiz de Fora - MG CEP: 36015-350</span>
+              </div>
+
+              <div class="footer-bar-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
+              </div>
+
+          </div>
+      </div>
+  </footer>
+
+  <div class="footer-bottom">
+      <div class="container">
+          <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
+          <p class="credit"><a href="mailto:mauryan.dev@gmail.com">@Mauryan.dev</a></p>
+      </div>
+  </div>
+
+  <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+      <span>Como posso te ajudar?</span>
+  </a>
 
   <script>
     const services = [
