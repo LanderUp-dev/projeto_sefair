@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe Jurídica de Elite</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon"
+        href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+        type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            /* Cores Gerais da Página Equipe */
+            --cor-fundo: #0a0c1a;
+            --cor-azul-principal: #0c133f;
+            --cor-azul-mais-escuro: #070914; 
+            --cor-dourado: #cba776;
+            --cor-texto: #f0f0f0;
+            --cor-texto-muted: #a0a5b8;
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Open Sans', sans-serif;
+
+            /* Variáveis Específicas para o Footer (Vindas da Index) */
+            --footer-bg-bar: #222346; /* Cor exata da barra de contatos da index */
+            --footer-bg-bottom: #2b2c48; /* Cor exata do copyright da index */
+            
+            /* Variáveis da Navbar */
+            --navbar-bg: #0a0c1a;
+            --navbar-text: #f0f0f0;
+            --navbar-gold: #cba776;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            background: linear-gradient(135deg, var(--cor-azul-mais-escuro) 0%, var(--cor-fundo) 100%);
+            color: var(--cor-texto);
+            font-family: var(--fonte-corpo);
+            line-height: 1.6;
+            /* Removi o padding-bottom global para o footer encostar no final */
+            padding: 60px 0 0 0; 
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- INÍCIO DO CSS DA NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+            background-color: transparent;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--navbar-bg);
+            padding: 0px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-logo {
+            width: 90px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: var(--navbar-text);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 300;
+            font-family: 'Inter', 'Open Sans', sans-serif;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .navbar-links a:hover {
+            color: var(--navbar-gold);
+        }
+
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger-bar {
+            width: 100%;
+            height: 2px;
+            background-color: var(--navbar-gold);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--navbar-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .navbar-links.open {
+                transform: translateX(0);
+            }
+
+            .navbar-links a {
+                margin: 20px 0;
+                font-size: 1.8rem;
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            body.no-scroll {
+                overflow: hidden;
+            }
+        }
+        /* --- FIM DO CSS DA NAVBAR --- */
+
+        /* Estilos do Header da Página de Equipe */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 40px; /* Espaço para a navbar fixa */
+        }
+
+        header h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 3rem;
+            color: var(--cor-dourado);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--cor-texto-muted);
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--cor-dourado);
+            margin: 20px auto;
+        }
+
+        /* Grid System da Equipe */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 80px; /* Espaço antes do footer */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(203, 167, 118, 0.15);
+            padding: 30px 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cor-dourado);
+            background: rgba(203, 167, 118, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(203, 167, 118, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(203, 167, 118, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .photo-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid var(--cor-dourado);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cor-azul-principal);
+            font-size: 2rem;
+            color: var(--cor-dourado);
+        }
+
+        .info {
+            width: 100%;
+        }
+
+        .info h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.3rem;
+            color: var(--cor-dourado);
+            margin-bottom: 5px;
+        }
+
+        .cargo {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--cor-texto-muted);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .details {
+            list-style: none;
+        }
+
+        .details li {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--cor-texto);
+        }
+
+        .details li i {
+            color: var(--cor-dourado);
+            margin-right: 12px;
+            width: 16px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade Equipe */
+        @media (max-width: 1100px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* =======================================================
+           ESTILOS DO FOOTER E WHATSAPP (COPIADOS DA INDEX)
+           ======================================================= */
+        
+        .footer-contact-bar {
+            background-color: var(--footer-bg-bar);
+            padding: 40px 0;
+            color: #f0f0f0;
+            width: 100%;
+        }
+
+        .footer-contact-bar .containerfooter {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Layout em Grid */
+        .footer-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-bar-item i {
+            color: var(--cor-dourado);
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        .footer-bar-item a,
+        .footer-bar-item span {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bar-item a:hover {
+            color: var(--cor-dourado);
+        }
+
+        /* Barra de Copyright */
+        .footer-bottom {
+            background-color: var(--footer-bg-bottom);
+            padding: 20px 0;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            width: 100%;
+        }
+
+        .footer-bottom .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0; /* Remove padding extra do container global */
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom .credit a {
+            color: var(--cor-dourado);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-bottom .credit a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 65px;
+            right: 25px;
+            z-index: 100;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp i {
+            font-size: 1.5rem;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsividade do Footer */
+        @media (max-width: 768px) {
+            .footer-bar-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-bar-item {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .floating-whatsapp span {
+                display: none;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+                padding: 0;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+
+            .floating-whatsapp i {
+                font-size: 1.8rem;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-bar-item {
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="main-nav">
+        <div class="container">
+            <a href="../index.html">
+                <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
+                    class="navbar-logo">
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <div class="navbar-links" id="navbar-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../pages/servico.html" class="nav-link">Serviços</a>
+                <a href="../index.html#sobre" class="nav-link">Sobre Nós</a>
+                <a href="../pages/area_de_atuacao.html" class="nav-link">Áreas de Atuação</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+                <a href="../pages/nossa_equipe.html" class="nav-link">Nossa Equipe</a>
+                <a href="../pages/artigos.html" class="nav-link">Artigos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>NOSSA EQUIPE</h1>
+            <p>Conhecimento Jurídico e Experiência Comprovada</p>
+        </header>
+
+        <div class="team-grid" id="teamGrid">
+            </div>
+    </div>
+
+    <script>
+        // Dados para preencher os 8 cards
+        const advogados = [
+            { nome: "Dr. Arthur Meirelles", oab: "OAB/SP 123.456", especialidade: "Direito Civil" },
+            { nome: "Dra. Beatriz Soares", oab: "OAB/RJ 654.321", especialidade: "Direito Tributário" },
+            { nome: "Dr. Carlos Eduardo", oab: "OAB/MG 789.012", especialidade: "Direito Empresarial" },
+            { nome: "Dra. Daniela Fontes", oab: "OAB/DF 321.987", especialidade: "Causas Complexas" },
+            { nome: "Dr. Estêvão Gomes", oab: "OAB/PR 456.789", especialidade: "Direito Digital" },
+            { nome: "Dra. Fernanda Lima", oab: "OAB/SC 987.654", especialidade: "Direito do Trabalho" },
+            { nome: "Dr. Gabriel Mendes", oab: "OAB/RS 147.258", especialidade: "Direito Penal" },
+            { nome: "Dra. Helena Vaz", oab: "OAB/GO 369.258", especialidade: "Família e Sucessões" }
+        ];
+
+        const grid = document.getElementById('teamGrid');
+
+        advogados.forEach(adv => {
+            grid.innerHTML += `
+                <div class="card" style="cursor: pointer;">
+                    <div class="photo-container">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="info">
+                        <h2>${adv.nome}</h2>
+                        <span class="cargo">Sócio Diretor / ${adv.oab}</span>
+                        <ul class="details">
+                            <li><i class="fa-solid fa-scale-balanced"></i> ${adv.especialidade}</li>
+                            <li><i class="fa-solid fa-award"></i> 15+ Anos de Experiência</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Mestre em Direito</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Casos Complexos</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Adicionar evento de clique aos cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                window.location.href = './contatos/contato_individual.html';
+            });
+        });
+
+        /* Script da Navbar */
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navbarLinks = document.getElementById('navbar-links');
+
+            // Efeito de Scroll
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Menu Mobile (Hamburger)
+            if (menuToggle && navbarLinks) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('open');
+                    navbarLinks.classList.toggle('open');
+                    document.body.classList.toggle('no-scroll');
+
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+                });
+
+                // Fechar menu ao clicar em um link
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navbarLinks.classList.contains('open')) {
+                            menuToggle.classList.remove('open');
+                            navbarLinks.classList.remove('open');
+                            document.body.classList.remove('no-scroll');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <footer class="footer-contact-bar" id="contato">
+        <div class="containerfooter">
+            <div class="footer-bar-grid">
+
+                <div class="footer-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:3232171981">(32) 3217-1981 / (32) 9 9123-3714</a>
+                </div>
+
+                <div class="footer-bar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Segunda a Sexta-feira: 9h00 - 18h30</span>
+                </div>
+
+                <div class="footer-bar-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Av: Olegário Maciel, 770 Santa Helena, Juiz de Fora - MG CEP: 36015-350</span>
+                </div>
+
+                <div class="footer-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
+            <p class="credit"><a href="mailto:mauryan.dev@gmail.com">@Mauryan.dev</a></p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Como posso te ajudar?</span>
+    </a>
+</body>
+
+</html>
