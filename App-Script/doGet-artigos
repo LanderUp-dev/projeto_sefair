@@ -1,0 +1,41 @@
+function doGet(e) {
+  const idBuscado = e.parameter.id;
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("Artigos");
+  
+  // DEBUG 1: Verifica se achou a aba
+  if (!sheet) {
+    return responder({ error: "ERRO: Aba chamada 'Artigos' não encontrada na planilha!" });
+  }
+
+  const data = sheet.getDataRange().getValues();
+  
+  // DEBUG 2: Verifica se tem dados
+  if (data.length < 2) {
+    return responder({ error: "ERRO: A planilha está vazia ou só tem o cabeçalho!" });
+  }
+
+  const headers = data[0];
+  const rows = data.slice(1);
+
+  // Procura o ID (Coluna A)
+  const row = rows.find(r => r[0].toString().trim() === idBuscado?.toString().trim());
+
+  if (row) {
+    let result = {};
+    headers.forEach((header, i) => result[header] = row[i]);
+    return responder(result);
+  }
+
+  return responder({ 
+    error: "Não encontrado", 
+    id_procurado: idBuscado, 
+    ids_disponiveis: rows.map(r => r[0]) // Isso ajuda a ver o que o script está lendo
+  });
+}
+
+function responder(json) {
+  return ContentService.createTextOutput(JSON.stringify(json))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader("Access-Control-Allow-Origin", "*");
+}
