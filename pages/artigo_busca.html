@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Serviços | Escritório de Advocacia</title>
+  <meta name="description"
+    content="Orientação jurídica especializada com excelência e personalização para atender às suas necessidades.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon"
+    href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+    type="image/x-icon">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Cores originais da página de serviços */
+      --background: hsl(222, 47%, 8%);
+      --card: hsl(222, 40%, 12%);
+      --foreground: hsl(45, 30%, 96%);
+      --muted: hsl(220, 15%, 60%);
+      --primary: hsl(42, 55%, 58%);
+      --primary-dark: hsl(222, 47%, 8%);
+      --border: hsl(222, 25%, 20%);
+      --gold-light: hsl(42, 60%, 70%);
+
+      /* Variáveis da Navbar e Footer (Vindas da Index para consistência) */
+      --navbar-bg: #0a0c1a;
+      --navbar-text: #f0f0f0;
+      --navbar-gold: #cba776;
+
+      --cor-dourado: #cba776;
+      --cor-outro-azul: #222346;
+      --cor-azul-mais-escuro: #2b2c48;
+      --footer-bg-bar: #222346;
+      --footer-bg-bottom: #2b2c48;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* --- INÍCIO DO CSS DA NAVBAR --- */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* Mudança: Fundo sempre sólido usando a variável de cor */
+      background-color: var(--navbar-bg);
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar-logo {
+      width: 90px;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-links a {
+      color: var(--navbar-text);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 300;
+      font-family: 'Inter', 'Open Sans', sans-serif;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .navbar-links a:hover {
+      color: var(--navbar-gold);
+    }
+
+    /* Menu Mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .hamburger-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--navbar-gold);
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Responsividade da Navbar */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--navbar-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .navbar-links.open {
+        transform: translateX(0);
+      }
+
+      .navbar-links a {
+        margin: 20px 0;
+        font-size: 1.8rem;
+      }
+
+      .menu-toggle.open .hamburger-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      .menu-toggle.open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.open .hamburger-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+    }
+
+    /* --- FIM DO CSS DA NAVBAR --- */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 16px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 64px;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      margin-top: 40px;
+      /* Ajuste para navbar */
+    }
+
+    .header h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .header h1 .gold {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+    }
+
+    /* Service Card */
+    .service-card {
+      background-color: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .service-card:nth-child(1) {
+      animation-delay: 0ms;
+    }
+
+    .service-card:nth-child(2) {
+      animation-delay: 100ms;
+    }
+
+    .service-card:nth-child(3) {
+      animation-delay: 200ms;
+    }
+
+    .service-card:nth-child(4) {
+      animation-delay: 300ms;
+    }
+
+    .service-card:nth-child(5) {
+      animation-delay: 400ms;
+    }
+
+    .service-card:nth-child(6) {
+      animation-delay: 500ms;
+    }
+
+    .service-card:hover {
+      transform: scale(1.02) translateY(0);
+      box-shadow: 0 20px 40px hsla(42, 55%, 58%, 0.25);
+      border-color: var(--primary);
+    }
+
+    .service-card .image-container {
+      overflow: hidden;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 192px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .service-card .content {
+      padding: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--foreground);
+      transition: color 0.3s ease;
+    }
+
+    .service-card:hover h3 {
+      color: var(--primary);
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 64px;
+      margin-bottom: 64px;
+      /* Espaço antes do footer */
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out 0.7s forwards;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: 640px) {
+      .cta-buttons {
+        flex-direction: row;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Barra de Busca */
+    .search-wrapper {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 20px 15px 50px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--foreground);
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .search-input:focus {
+      border-color: var(--cor-dourado);
+      box-shadow: 0 0 15px rgba(203, 167, 118, 0.2);
+    }
+
+    .search-input::placeholder {
+      color: #555;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--cor-dourado);
+      pointer-events: none;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 20px;
+      font-size: 1.1rem;
+      padding: 15px;
+      border: 1px dashed #333;
+      border-radius: 8px;
+    }
+
+    /* =======================================================
+       ESTILOS DO FOOTER E WHATSAPP (COPIADOS DA INDEX)
+       ======================================================= */
+
+    .footer-contact-bar {
+      background-color: var(--footer-bg-bar);
+      padding: 40px 0;
+      color: #f0f0f0;
+      width: 100%;
+    }
+
+    .footer-contact-bar .containerfooter {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Layout em Grid */
+    .footer-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-bar-item i {
+      color: var(--cor-dourado);
+      font-size: 1.3rem;
+      width: 25px;
+      text-align: center;
+    }
+
+    .footer-bar-item a,
+    .footer-bar-item span {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bar-item a:hover {
+      color: var(--cor-dourado);
+    }
+
+    /* Barra de Copyright */
+    .footer-bottom {
+      background-color: var(--footer-bg-bottom);
+      padding: 20px 0;
+      color: #a0a0a0;
+      font-size: 0.85rem;
+      width: 100%;
+    }
+
+    .footer-bottom .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 20px;
+      /* Padding local para alinhar */
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom .credit a {
+      color: var(--cor-dourado);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-bottom .credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* Botão Flutuante do WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 65px;
+      right: 25px;
+      z-index: 100;
+      background-color: #25D366;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .floating-whatsapp i {
+      font-size: 1.5rem;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsividade do Footer */
+    @media (max-width: 768px) {
+      .footer-bar-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-bar-item {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .floating-whatsapp span {
+        display: none;
+      }
+
+      .floating-whatsapp {
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .floating-whatsapp i {
+        font-size: 1.8rem;
+      }
+
+      .footer-bottom .container {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-bar-item {
+        justify-content: flex-start;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" id="main-nav">
+    <div class="container">
+      <a href="../index.html">
+        <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
+          class="navbar-logo">
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="navbar-links" id="navbar-links">
+        <a href="../index.html" class="nav-link">Início</a>
+        <a href="./servico_busca.html" class="nav-link">Serviços</a>
+        <a href="../index.html#contato" class="nav-link">Contato</a>
+        <a href="./nossa_equipe_busca.html" class="nav-link">Escritório</a>
+        <a href="./artigo_busca.html" class="nav-link">Artigos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1>Artigos <span class="gold">Publicados</span></h1>
+
+    </header>
+
+    <div class="search-wrapper">
+      <i class="fas fa-search" style="position: absolute; left: 20px; top: 18px; color: var(--primary);"></i>
+      <input type="text" id="service-search" class="search-input" placeholder="Buscar Artigos...">
+    </div>
+
+    <div id="no-results" class="no-results">
+      <p>Nenhum serviço encontrado para sua busca.</p>
+    </div>
+
+    <section class="services-grid" id="services">
+    </section>
+
+
+  </main>
+
+  <footer class="footer-contact-bar" id="contato">
+    <div class="containerfooter">
+      <div class="footer-bar-grid">
+
+        <div class="footer-bar-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:3232171981">(32) 3217-1981 / (32) 9 9123-3714</a>
+        </div>
+
+        <div class="footer-bar-item">
+          <i class="fas fa-clock"></i>
+          <span>Segunda a Sexta-feira: 9h00 - 18h30</span>
+        </div>
+
+        <div class="footer-bar-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Av: Olegário Maciel, 770 Santa Helena, Juiz de Fora - MG CEP: 36015-350</span>
+        </div>
+
+        <div class="footer-bar-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
+      <p class="credit"><a href="https://landerup-dev.github.io/Portifolio/">Lander Up</a></p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Como posso te ajudar?</span>
+  </a>
+
+  <script>
+    // Substitua pela sua URL de implantação atualizada
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwE_i2LuXb7YudY2lqUoMy9hqf7eU1sJGvK5QO16Ziy_smBbb10q4fkB2CFQAhwkT9h/exec";
+    const CACHE_KEY = 'sna_artigos_db';
+    let dbArtigos = [];
+
+    // 1. Carregamento Híbrido (Cache + API)
+    async function carregarArtigos() {
+      const container = document.getElementById('services');
+
+      // Tenta carregar do Cache primeiro (Instantâneo)
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        dbArtigos = JSON.parse(cached);
+        renderizarCards(dbArtigos);
+      }
+
+      try {
+        // Busca dados novos (Background)
+        const response = await fetch(SCRIPT_URL, { method: 'GET', redirect: 'follow' });
+        const novosDados = await response.json();
+
+        // Só atualiza a tela e o cache se os dados mudaram
+        if (JSON.stringify(novosDados) !== cached) {
+          dbArtigos = novosDados;
+          localStorage.setItem(CACHE_KEY, JSON.stringify(novosDados));
+          renderizarCards(dbArtigos);
+        }
+      } catch (error) {
+        console.error("Erro na API:", error);
+        if (!cached) {
+          container.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">Erro ao carregar artigos.</p>`;
+        }
+      }
+    }
+
+
+    // 1. Defina o array de serviços com as imagens reserva (coloque isso antes da função)
+    const servicesFallback = [
+      { image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=640&h=400&fit=crop" }, // Empresarial
+      { image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop" }, // Tributário
+      { image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=640&h=400&fit=crop" }, // Cível
+      { image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&h=400&fit=crop" }, // Trabalhista
+      { image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=640&h=400&fit=crop" }, // Família
+      { image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&h=400&fit=crop" }  // Imobiliário
+    ];
+
+    function renderizarCards(dados) {
+      const container = document.getElementById('services');
+      if (!container) return;
+      container.innerHTML = "";
+
+      const lista = Array.isArray(dados) ? dados : [dados];
+
+      lista.forEach((artigo, index) => {
+        if (!artigo.ID || !artigo.titulo) return;
+
+        // --- LÓGICA DA IMAGEM ---
+        // Tentamos pegar a coluna 'imagem_artigo' (se você criar na planilha)
+        // Se não existir, usamos uma imagem do array fallback seguindo a ordem
+        let imgFinal = artigo.imagem_artigo;
+
+        if (!imgFinal || imgFinal === "" || imgFinal === "#") {
+          // O símbolo % garante que se tivermos 7 artigos, o 7º volta para a imagem 1
+          imgFinal = servicesFallback[index % servicesFallback.length].image;
+        }
+
+        const card = document.createElement('a');
+        card.className = 'service-card';
+        card.href = `./artigo_todos.html?id=${artigo.ID}`;
+        card.style.animationDelay = `${index * 100}ms`;
+
+        card.innerHTML = `
+      <div class="image-container">
+        <img src="${imgFinal}" 
+             alt="${artigo.titulo}" 
+             loading="lazy"
+             onerror="this.src='${servicesFallback[0].image}'">
+      </div>
+      <div class="content">
+        <span class="category-tag">Artigo Jurídico</span>
+        <h3>${artigo.titulo}</h3>
+        <p>${artigo.resumo || 'Clique para ler o conteúdo completo.'}</p>
+        <div class="card-footer" style="display: flex; align-items: center; gap: 10px; margin-top: 15px; color: var(--cor-dourado); font-size: 0.8rem;">
+            <i class="fas fa-user-tie"></i>
+            <span>${artigo.autor || 'SNA Advogados'}</span>
+        </div>
+      </div>
+    `;
+        container.appendChild(card);
+      });
+    }
+
+    // 2. Busca Otimizada com Debounce (Evita lentidão ao digitar)
+    let timerBusca;
+    document.getElementById('service-search').addEventListener('input', (e) => {
+      clearTimeout(timerBusca);
+      timerBusca = setTimeout(() => {
+        const termo = e.target.value.toLowerCase().trim();
+        const filtrados = dbArtigos.filter(a =>
+          (a.titulo && a.titulo.toLowerCase().includes(termo)) ||
+          (a.resumo && a.resumo.toLowerCase().includes(termo))
+        );
+        renderizarCards(filtrados);
+      }, 200);
+    });
+
+    document.addEventListener("DOMContentLoaded", carregarArtigos);
+  </script>
+</body>
+
+</html>
