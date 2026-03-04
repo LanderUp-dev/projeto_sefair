@@ -448,14 +448,109 @@
 
       // Renderização de Serviços
       const services = [
-        { image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=640&h=400&fit=crop", title: "Direito Empresarial", description: "Assessoria jurídica completa para empresas e governança.", link: "servico_todos.html?s=trabalhista_empresarial" },
-        { image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop", title: "Direito Tributário", description: "Planejamento estratégico e recuperação de créditos fiscais.", link: "servico_todos.html?s=tributario" },
-        { image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=640&h=400&fit=crop", title: "Direito Cível", description: "Contratos, responsabilidade civil e direito do consumidor.", link: "servico_todos.html?s=civel" },
-        { image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&h=400&fit=crop", title: "Direito Trabalhista", description: "Consultoria preventiva e defesa em reclamações.", link: "servico_todos.html?s=trabalhista" },
-        { image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=640&h=400&fit=crop", title: "Direito de Família", description: "Divórcios, inventários e mediação familiar.", link: "servico_todos.html?s=familia" },
-        { image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&h=400&fit=crop", title: "Direito Imobiliário", description: "Regularização de imóveis e análise de contratos.", link: "servico_todos.html?s=imobiliario" }
+        {
+          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=640&h=400&fit=crop",
+          title: "Direito Administrativo",
+          description: "Atuação perante órgãos públicos e defesa em processos administrativos.",
+          link: "servico_todos.html?s=administrativo"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop",
+          title: "Direito Bancário",
+          description: "Revisão de contratos, taxas e defesa contra práticas abusivas bancárias.",
+          link: "servico_todos.html?s=bancario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=640&h=400&fit=crop",
+          title: "Direito Cível",
+          description: "Contratos, responsabilidade civil e soluções de conflitos diversos.",
+          link: "servico_todos.html?s=civel"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=640&h=400&fit=crop",
+          title: "Direito Civil",
+          description: "Assessoria em direitos e deveres das pessoas e relações jurídicas privadas.",
+          link: "servico_todos.html?s=civil"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=640&h=400&fit=crop",
+          title: "Consumidor Empresarial",
+          description: "Defesa jurídica de empresas em relações de consumo e compliance.",
+          link: "servico_todos.html?s=consumidor_empresarial"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=640&h=400&fit=crop",
+          title: "Direito de Família",
+          description: "Divórcios, inventários, guardas e mediação de conflitos familiares.",
+          link: "servico_todos.html?s=familia"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1454165833767-027eeed15b3e?w=640&h=400&fit=crop",
+          title: "Franchising",
+          description: "Assessoria jurídica para franqueadores e franqueados.",
+          link: "servico_todos.html?s=franchising"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&h=400&fit=crop",
+          title: "Direito Imobiliário",
+          description: "Regularização de imóveis, escrituras e análise de contratos de compra e venda.",
+          link: "servico_todos.html?s=imobiliario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=640&h=400&fit=crop",
+          title: "Direito Individual",
+          description: "Assistência personalizada em causas de interesse da pessoa física.",
+          link: "servico_todos.html?s=individual"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=640&h=400&fit=crop",
+          title: "Direito Médico",
+          description: "Defesa técnica para profissionais da saúde e erro médico.",
+          link: "servico_todos.html?s=medico"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&h=400&fit=crop",
+          title: "Gestão de Passivos",
+          description: "Estratégias para negociação de dívidas e reestruturação financeira.",
+          link: "servico_todos.html?s=passivos"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1473186578172-c141e6798ee4?w=640&h=400&fit=crop",
+          title: "Direito Previdenciário",
+          description: "Concessão de aposentadorias, auxílios e revisões de benefícios.",
+          link: "servico_todos.html?s=previdenciario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&h=400&fit=crop",
+          title: "Responsabilidade Civil",
+          description: "Ações de indenização por danos morais e materiais.",
+          link: "servico_todos.html?s=responsabilidade_civil"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=640&h=400&fit=crop",
+          title: "Direito Societário",
+          description: "Constituição de empresas, fusões, aquisições e acordos de sócios.",
+          link: "servico_todos.html?s=societario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=640&h=400&fit=crop",
+          title: "Direito Trabalhista",
+          description: "Defesa do trabalhador e consultoria em direitos laborais.",
+          link: "servico_todos.html?s=trabalhista"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=640&h=400&fit=crop",
+          title: "Trabalhista Empresarial",
+          description: "Consultoria preventiva e defesa patronal em reclamações trabalhistas.",
+          link: "servico_todos.html?s=trabalhista_empresarial"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop",
+          title: "Direito Tributário",
+          description: "Planejamento tributário, recuperação de impostos e defesas fiscais.",
+          link: "servico_todos.html?s=tributario"
+        }
       ];
-
       function render(filter = '') {
         const container = document.getElementById('services');
         container.innerHTML = '';
