@@ -344,17 +344,36 @@
 
         @media (max-width: 900px) {
 
+            /* 1. NAVBAR: Alinhamento Logo (Esquerda) e Hamburger (Direita) */
+            .navbar .container {
+                display: flex !important;
+                flex-direction: row !important;
+                /* Força ficar em linha */
+                justify-content: space-between !important;
+                /* Empurra um para cada lado */
+                align-items: center !important;
+                padding: 10px 20px;
+            }
+
+            /* Aplica o fundo azul no mobile quando a classe .scrolled for ativada pelo JS */
+            .navbar.scrolled {
+                background-color: var(--cor-azul-principal) !important;
+                padding: 10px 0;
+            }
+
+            .navbar-logo {
+                width: 75px;
+                /* Tamanho ajustado para mobile */
+                margin: 0;
+            }
+
             .menu-toggle {
                 display: flex;
+                margin: 0;
+                z-index: 1100;
             }
 
-            .navbar {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-
+            /* Ajuste do menu que abre lateralmente */
             .navbar-links {
                 position: fixed;
                 top: 0;
@@ -366,7 +385,6 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-
                 transform: translateX(100%);
                 transition: transform 0.3s ease-in-out;
             }
@@ -376,22 +394,132 @@
             }
 
             .navbar-links a {
-                margin: 20px 0;
-                font-size: 1.8rem;
-                color: var(--cor-texto);
+                margin: 15px 0;
+                font-size: 1.7rem;
             }
 
-            .menu-toggle.open .hamburger-bar:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 6px);
+            /* 2. HERO: Centralização total de textos e formulário */
+            .hero-section {
+                padding-top: 120px;
+                /* Espaço para não ficar sob a nav fixa */
+                text-align: center;
+                min-height: auto;
+                padding-bottom: 60px;
             }
 
-            .menu-toggle.open .hamburger-bar:nth-child(2) {
-                opacity: 0;
+            .hero-section .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 35px;
             }
 
-            .menu-toggle.open .hamburger-bar:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -6px);
+            .hero-content h1 {
+                font-size: 2.1rem;
+                margin: 0 auto 20px auto;
+                line-height: 1.3;
             }
+
+            .hero-content p {
+                font-size: 1.1rem;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            /* 3. FORMULÁRIO: Centralizado e com largura controlada */
+            .form-container {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 25px;
+            }
+        }
+
+        .navbar .container {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar-links {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--cor-fundo);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-links.open {
+            transform: translateX(0);
+        }
+
+        .navbar-links a {
+            margin: 20px 0;
+            font-size: 1.8rem;
+            color: var(--cor-texto);
+        }
+
+        .menu-toggle.open .hamburger-bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .menu-toggle.open .hamburger-bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open .hamburger-bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .navbar .container {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        /* Removemos as margens negativas que estavam deslocando o ícone */
+        .menu-toggle {
+            display: flex;
+            margin: 0;
+            z-index: 1001;
+            /* Garante que fique acima de tudo */
+        }
+
+        .navbar-logo {
+            width: 70px;
+            /* Um pouco menor para caber melhor no celular */
+            margin: 0;
+        }
+
+        /* Ajuste para o menu que abre não ter conflito */
+        .navbar-links {
+            padding-top: 60px;
+            /* Espaço para não cobrir o logo ao abrir */
         }
 
         body.no-scroll {
@@ -694,11 +822,11 @@
         .service-card {
             flex: 0 0 calc(33.333% - 40px);
             width: calc(33.333% - 20px);
-            margin-right: 20px;
+            margin-right: 25px;
 
             background-color: var(--cor-azul-mais-escuro);
             border-radius: 12px;
-            padding: 40px 30px;
+            padding: 40px 35px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
@@ -789,6 +917,13 @@
 
         @media (max-width: 720px) {
 
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+                /* Isso mata qualquer rolagem lateral indesejada */
+            }
+
             .section-title {
                 font-size: 2.5rem;
             }
@@ -798,11 +933,19 @@
             }
 
             .service-card {
-                flex: 0 0 calc(140% - 40px);
-                width: calc(100% - 40px);
-                margin-right: 40px;
+                /* Ajustado para 100% para não vazar da tela */
+                flex: 0 0 100%;
+                width: 100%;
+                margin-right: 0;
+                /* Removi a margem que causava o desalinhamento */
                 padding: 30px 20px;
                 min-height: unset;
+            }
+
+            /* Adicione isso para garantir que o container do carrossel não estique a página */
+            .services-carousel-slides {
+                display: flex;
+                width: 100%;
             }
 
             .service-card .card-title {
@@ -910,6 +1053,10 @@
         }
 
         @media (max-width: 768px) {
+            .navbar.scrolled {
+                background-color: var(--cor-azul-principal) !important;
+                padding: 10px 0;
+            }
 
             .why-choose-us-section {
                 padding: 60px 0;
@@ -1205,6 +1352,11 @@
         }
 
         @media (max-width: 900px) {
+            .navbar.scrolled {
+                background-color: var(--cor-azul-principal) !important;
+                padding: 10px 0;
+            }
+
             .lista-estados li {
                 padding: 5px 0;
             }
@@ -1225,6 +1377,7 @@
         }
 
         @media (max-width: 480px) {
+
             .lista-estados {
                 grid-template-columns: 1fr;
             }
@@ -3029,7 +3182,7 @@
             <div class="footer-bottom">
                 <div class="container">
                     <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
-                   <p class="credit"><a href="https://landerup-dev.github.io/Portifolio/">Lander Up</a></p>
+                    <p class="credit"><a href="https://landerup-dev.github.io/Portifolio/">Lander Up</a></p>
                 </div>
             </div>
 
