@@ -270,56 +270,48 @@
         }
 
         .photo-container {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 2px solid var(--cor-dourado);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--cor-azul-principal);
-            font-size: 2rem;
-            color: var(--cor-dourado);
-        }
-
-        .info {
             width: 100%;
+            /* A foto ocupa toda a largura do card */
+            height: 250px;
+            /* Defina aqui a altura desejada para a foto (pode ser maior que 250px) */
+            border: none;
+            /* Remove a moldura dourada */
+            border-radius: 0;
+            /* Tira o formato de círculo */
+            margin-bottom: 0;
+            /* Remove a margem abaixo da foto */
+            background: none;
+            /* Remove o fundo dourado */
+            font-size: 0;
+            /* Remove tamanho de fonte para evitar espaçamento de texto no container */
         }
 
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Mantém uma sombra suave */
+            border-color: rgba(203, 167, 118, 0.15);
+            /* Mantém a cor da borda sutil ao passar o mouse */
+        }
+
+        /* Centraliza o texto abaixo da foto */
+        .info {
+            padding: 20px;
+            /* Adiciona padding interno na área do texto */
+            text-align: center;
+        }
+
+        /* Estilo para o nome */
         .info h2 {
-            font-family: var(--fonte-titulo);
-            font-size: 1.3rem;
-            color: var(--cor-dourado);
+            font-size: 1.4rem;
             margin-bottom: 5px;
         }
 
+        /* Estilo para o cargo */
         .cargo {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--cor-texto-muted);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .details {
-            list-style: none;
-        }
-
-        .details li {
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            color: var(--cor-texto);
-        }
-
-        .details li i {
-            color: var(--cor-dourado);
-            margin-right: 12px;
-            width: 16px;
             font-size: 0.9rem;
+            color: #a0a5b8;
+            margin-bottom: 0;
+            /* Remove margem inferior padrão */
         }
 
         /* Responsividade Equipe */
@@ -536,38 +528,47 @@
 
         const PAGINA_PERFIL = "nossa_equipe_todos.html";
 
+
         const advogados = [
-            { id: "arthur", nome: "Dr. Arthur Meirelles", oab: "OAB/SP 123.456", especialidade: "Direito Civil" },
-            { id: "beatriz", nome: "Dra. Beatriz Soares", oab: "OAB/RJ 654.321", especialidade: "Direito Tributário" },
-            { id: "carlos", nome: "Dr. Carlos Eduardo", oab: "OAB/MG 789.012", especialidade: "Direito Empresarial" },
-            { id: "daniela", nome: "Dra. Daniela Fontes", oab: "OAB/DF 321.987", especialidade: "Causas Complexas" },
-            { id: "estevao", nome: "Dr. Estêvão Gomes", oab: "OAB/PR 456.789", especialidade: "Direito Digital" },
-            { id: "fernanda", nome: "Dra. Fernanda Lima", oab: "OAB/SC 987.654", especialidade: "Direito do Trabalho" },
-            { id: "gabriel", nome: "Dr. Gabriel Mendes", oab: "OAB/RS 147.258", especialidade: "Direito Penal" },
-            { id: "helena", nome: "Dra. Helena Vaz", oab: "OAB/GO 369.258", especialidade: "Família e Sucessões" }
+            { id: "sergio", nome: "Dr. Sergio", cargo: "Sócio Fundador", foto: "SERGIO" },
+            { id: "katarina", nome: "Dra. Katarina", cargo: "Sócio Associado", foto: "KATARINA" },
+            { id: "fernanda", nome: "Dra. Fernanda", cargo: "Coordenadora Jurídica", foto: "FERNANDA" },
+            { id: "talitha", nome: "Dra. Talitha", cargo: "Coordenadora Jurídica", foto: "TALITHA" },
+            { id: "allana", nome: "Dra. Allana", cargo: "Sócio Sênior", foto: "ALLANA" },
+            { id: "diego", nome: "Dr. Diego", cargo: "Sócio Diretor", foto: "DIEGO" },
+            { id: "fernanda", nome: "Dra. Fernanda", cargo: "Coordenadora Jurídica", foto: "FERNANDA" },
+            { id: "jessica", nome: "Dra. Jéssica", cargo: "Sócio Associado", foto: "JESSICA" },
+            { id: "julia", nome: "Dra. Julia", cargo: "Sócio Pleno", foto: "JULIA" },
+            { id: "lilian", nome: "Dra. Lilian", cargo: "Sócio Pleno", foto: "LILIAN" },
+            { id: "luiza", nome: "Dra. Luiza", cargo: "Coordenadora de Área", foto: "LUIZA" },
+            { id: "lunara", nome: "Dra. Lunara", cargo: "Sócio Sênior", foto: "LUNARA" },
+            { id: "maria", nome: "Dra. Maria", cargo: "Sócio Sênior", foto: "MARIA" },
+            { id: "mariaeduarda", nome: "Dra. Maria Eduarda", cargo: "Sócio Associado", foto: "MARIAEDUARDA" },
+            { id: "marina", nome: "Dra. Marina", cargo: "Sócio Associado", foto: "MARINA" },
+            { id: "vanessa", nome: "Dra. Vanessa", cargo: "Sócio Pleno", foto: "VANESSA" },
+            { id: "vivian", nome: "Dra. Vivian", cargo: "Sócio Associado", foto: "VIVIAN" },
+            { id: "wilson", nome: "Dr. Wilson", cargo: "Sócio Fundador", foto: "WILSON" }
         ];
 
         const grid = document.getElementById('teamGrid');
 
-        // Renderiza os cards linkando para o ID do advogado
+
+
         advogados.forEach(adv => {
+            // Monta o caminho dinâmico para a imagem (exemplo: ALLANA-equipe-sna.png)
+            const caminhoFoto = `/images/persons/${adv.foto}.png`;
+
             grid.innerHTML += `
-            <div class="card" style="cursor: pointer;" onclick="window.location.href='${PAGINA_PERFIL}?adv=${adv.id}'">
-                <div class="photo-container">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <div class="info">
-                    <h2>${adv.nome}</h2>
-                    <span class="cargo">Sócio Diretor / ${adv.oab}</span>
-                    <ul class="details">
-                        <li><i class="fa-solid fa-scale-balanced"></i> ${adv.especialidade}</li>
-                        <li><i class="fa-solid fa-award"></i> 15+ Anos de Experiência</li>
-                        <li><i class="fa-solid fa-graduation-cap"></i> Mestre em Direito</li>
-                        <li><i class="fa-solid fa-briefcase"></i> Casos Complexos</li>
-                    </ul>
-                </div>
-            </div>
-        `;
+    <div class="card" style="cursor: pointer;" onclick="window.location.href='${PAGINA_PERFIL}?adv=${adv.id}'">
+        <div class="photo-container">
+            <img src="${caminhoFoto}" alt="${adv.nome}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="info">
+            <h2>${adv.nome}</h2>
+            <span class="cargo">${adv.cargo}</span>
+        </div>
+    </div>
+`;
         });
 
         // Adicionar evento de clique aos cards
