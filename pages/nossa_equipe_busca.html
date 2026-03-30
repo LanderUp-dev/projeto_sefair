@@ -553,10 +553,9 @@
         const grid = document.getElementById('teamGrid');
 
 
-
         advogados.forEach(adv => {
-            // Monta o caminho dinâmico para a imagem (exemplo: ALLANA-equipe-sna.png)
-            const caminhoFoto = `/images/persons/${adv.foto}.png`;
+           
+            const caminhoFoto = `/images/persons/${adv.foto}-equipe-sna.png`;
 
             grid.innerHTML += `
     <div class="card" style="cursor: pointer;" onclick="window.location.href='${PAGINA_PERFIL}?adv=${adv.id}'">
