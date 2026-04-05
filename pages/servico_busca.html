@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Serviços | Escritório de Advocacia</title>
+  <meta name="description"
+    content="Orientação jurídica especializada com excelência e personalização para atender às suas necessidades.">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon"
+    href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+    type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      /* Cores originais da página de serviços */
+      --background: hsl(222, 47%, 8%);
+      --card: hsl(222, 40%, 12%);
+      --foreground: hsl(45, 30%, 96%);
+      --muted: hsl(220, 15%, 60%);
+      --primary: hsl(42, 55%, 58%);
+      --primary-dark: hsl(222, 47%, 8%);
+      --border: hsl(222, 25%, 20%);
+      --gold-light: hsl(42, 60%, 70%);
+
+      /* Variáveis da Navbar e Footer (Vindas da Index para consistência) */
+      --navbar-bg: #0a0c1a;
+      --navbar-text: #f0f0f0;
+      --navbar-gold: #cba776;
+
+      --footer-bg-bar: #222346;
+      --footer-bg-bottom: #2b2c48;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      background: linear-gradient(135deg, #070914 0%, var(--background) 100%);
+      color: var(--foreground);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: 80px;
+      /* Espaço para a navbar fixa */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* Mudança: Fundo sempre sólido usando a variável de cor */
+      background-color: var(--navbar-bg);
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar-logo {
+      width: 90px;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-links a {
+      color: var(--navbar-text);
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 300;
+      font-family: 'Inter', 'Open Sans', sans-serif;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .navbar-links a:hover {
+      color: var(--navbar-gold);
+    }
+
+    /* Menu Mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .hamburger-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--navbar-gold);
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--navbar-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .navbar-links.open {
+        transform: translateX(0);
+      }
+
+      .navbar-links a {
+        margin: 15px 0;
+        font-size: 1.5rem;
+      }
+
+      /* Animação X do Hamburguer */
+      .menu-toggle.open .hamburger-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .menu-toggle.open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.open .hamburger-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+    }
+
+    /* --- CONTEÚDO DE SERVIÇOS --- */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      margin-bottom: 15px;
+      color: var(--navbar-gold);
+    }
+
+
+
+    .header p {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 20px 15px 50px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--foreground);
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      background: rgba(203, 167, 118, 0.05);
+    }
+
+    .services-grid {
+      display: grid;
+      /* Trocamos auto-fit por auto-fill */
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+      /* Opcional: Garante que os cards não fiquem gigantes em telas muito largas */
+      justify-content: start;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: grayscale(30%);
+    }
+
+    .service-card .content {
+      padding: 25px;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* --- FOOTER & WHATSAPP (PADRÃO) --- */
+    .footer-contact-bar {
+      background-color: var(--footer-bg-bar);
+      padding: 40px 0;
+      color: #f0f0f0;
+      margin-top: 60px;
+    }
+
+    .footer-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .footer-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-bar-item i {
+      color: var(--primary);
+    }
+
+    .footer-bar-item a {
+      color: #f0f0f0;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      background-color: var(--footer-bg-bottom);
+      padding: 20px 0;
+      color: #a0a0a0;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .footer-bottom .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .floating-whatsapp span {
+        display: none;
+      }
+
+      .floating-whatsapp {
+        border-radius: 50%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" id="main-nav">
+    <div class="container">
+      <a href="../index.html">
+        <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
+          class="navbar-logo">
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="navbar-links" id="navbar-links">
+        <a href="../index.html" class="nav-link">Início</a>
+        <a href="./servico_busca.html" class="nav-link">Serviços</a>
+        <a href="../index.html#contato" class="nav-link">Contato</a>
+        <a href="./nossa_equipe_busca.html" class="nav-link">Escritório</a>
+        <a href="./artigo_busca.html" class="nav-link">Artigos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="header">
+      <h1>Nossos Serviços</h1>
+      <p>Excelência Jurídica e Atendimento Personalizado</p>
+    </header>
+
+    <div class="search-wrapper">
+      <i class="fas fa-search" style="position: absolute; left: 20px; top: 18px; color: var(--primary);"></i>
+      <input type="text" id="service-search" class="search-input" placeholder="Buscar por área jurídica...">
+    </div>
+
+    <div id="no-results" style="display:none; text-align:center; padding: 40px; color: var(--muted);">
+      Nenhum serviço encontrado para sua busca.
+    </div>
+
+    <section class="services-grid" id="services"></section>
+  </main>
+
+  <footer class="footer-contact-bar" id="contato">
+    <div class="container">
+      <div class="footer-bar-grid">
+        <div class="footer-bar-item"><i class="fas fa-phone"></i><a href="tel:3232171981">(32) 3217-1981</a></div>
+        <div class="footer-bar-item"><i class="fas fa-clock"></i><span>Seg - Sex: 9h00 - 18h30</span></div>
+        <div class="footer-bar-item"><i class="fas fa-map-marker-alt"></i><span>Juiz de Fora - MG</span></div>
+        <div class="footer-bar-item"><i class="fas fa-envelope"></i><a
+            href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© Copyright SNA. Todos os direitos reservados.</p>
+      <p><a href="https://landerup-dev.github.io/Portifolio/">Lander Up</a></p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+    <span>Falar com um Advogado</span>
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.getElementById('main-nav');
+      const menuToggle = document.getElementById('menu-toggle');
+      const navbarLinks = document.getElementById('navbar-links');
+
+      // Scroll Navbar
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      });
+
+      // Menu Toggle
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        navbarLinks.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+      });
+
+      // Fechar menu ao clicar no link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('open');
+          navbarLinks.classList.remove('open');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+
+      // Renderização de Serviços
+      const services = [
+        {
+          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=640&h=400&fit=crop",
+          title: "Direito Administrativo",
+          description: "Atuação perante órgãos públicos e defesa em processos administrativos.",
+          link: "servico_todos.html?s=administrativo"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop",
+          title: "Direito Bancário",
+          description: "Revisão de contratos, taxas e defesa contra práticas abusivas bancárias.",
+          link: "servico_todos.html?s=bancario"
+        },
+
+        {
+          image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=640&h=400&fit=crop",
+          title: "Direito Civil",
+          description: "Assessoria em direitos e deveres das pessoas e relações jurídicas privadas.",
+          link: "servico_todos.html?s=civil"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=640&h=400&fit=crop",
+          title: "Consumidor Empresarial",
+          description: "Defesa jurídica de empresas em relações de consumo e compliance.",
+          link: "servico_todos.html?s=consumidor_empresarial"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=640&h=400&fit=crop",
+          title: "Direito de Família",
+          description: "Divórcios, inventários, guardas e mediação de conflitos familiares.",
+          link: "servico_todos.html?s=familia"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=640&h=400&fit=crop",
+          title: "Franchising",
+          description: "Assessoria jurídica para franqueadores e franqueados.",
+          link: "servico_todos.html?s=franchising"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&h=400&fit=crop",
+          title: "Direito Imobiliário",
+          description: "Regularização de imóveis, escrituras e análise de contratos de compra e venda.",
+          link: "servico_todos.html?s=imobiliario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=640&h=400&fit=crop",
+          title: "Direito Individual",
+          description: "Assistência personalizada em causas de interesse da pessoa física.",
+          link: "servico_todos.html?s=individual"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=640&h=400&fit=crop",
+          title: "Direito Médico",
+          description: "Defesa técnica para profissionais da saúde e erro médico.",
+          link: "servico_todos.html?s=medico"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&h=400&fit=crop",
+          title: "Gestão de Passivos",
+          description: "Estratégias para negociação de dívidas e reestruturação financeira.",
+          link: "servico_todos.html?s=passivos"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=640&h=400&fit=crop",
+          title: "Direito Previdenciário",
+          description: "Concessão de aposentadorias, auxílios e revisões de benefícios.",
+          link: "servico_todos.html?s=previdenciario"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=640&h=400&fit=crop",
+          title: "Responsabilidade Civil",
+          description: "Ações de indenização por danos morais e materiais.",
+          link: "servico_todos.html?s=responsabilidade_civil"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=640&h=400&fit=crop",
+          title: "Direito Societário",
+          description: "Constituição de empresas, fusões, aquisições e acordos de sócios.",
+          link: "servico_todos.html?s=societario"
+        },
+
+        {
+          image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=640&h=400&fit=crop",
+          title: "Trabalhista Empresarial",
+          description: "Consultoria preventiva e defesa patronal em reclamações trabalhistas.",
+          link: "servico_todos.html?s=trabalhista_empresarial"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&h=400&fit=crop",
+          title: "Direito Tributário",
+          description: "Planejamento tributário, recuperação de impostos e defesas fiscais.",
+          link: "servico_todos.html?s=tributario"
+        }
+      ];
+      function render(filter = '') {
+        const container = document.getElementById('services');
+        container.innerHTML = '';
+        const filtered = services.filter(s => s.title.toLowerCase().includes(filter.toLowerCase()));
+
+        document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+
+        filtered.forEach(s => {
+          const card = document.createElement('a');
+          card.className = 'service-card';
+          card.href = s.link;
+          card.innerHTML = `
+            <img src="${s.image}" alt="${s.title}">
+            <div class="content">
+              <h3>${s.title}</h3>
+              <p>${s.description}</p>
+            </div>`;
+          container.appendChild(card);
+        });
+      }
+
+      render();
+      document.getElementById('service-search').addEventListener('input', (e) => render(e.target.value));
+    });
+  </script>
+</body>
+
+</html>

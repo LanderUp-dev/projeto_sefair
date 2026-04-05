@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title id="page-title">Serviços Especializados - SNA Advogados</title>
+
+    <style>
+        :root {
+            --bg-dark: #0a0c1a;
+            --bg-card: #141726;
+            --text-main: #f0f0f0;
+            --text-muted: #cccccc;
+            --gold-primary: #cba776;
+            --gold-hover: #b89565;
+            --font-main: 'Lato', sans-serif;
+            --max-width: 1200px;
+
+            /* Variáveis da Navbar */
+            --navbar-bg: #0a0c1a;
+            --navbar-text: #f0f0f0;
+            --navbar-gold: #cba776;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-top: 100px;
+
+
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- INÍCIO DO CSS DA NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+            background-color: transparent;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--navbar-bg);
+            padding: 0px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-logo {
+            width: 90px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: var(--navbar-text);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 300;
+            font-family: 'Inter', 'Open Sans', sans-serif;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .navbar-links a:hover {
+            color: var(--navbar-gold);
+        }
+
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger-bar {
+            width: 100%;
+            height: 2px;
+            background-color: var(--navbar-gold);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--navbar-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .navbar-links.open {
+                transform: translateX(0);
+            }
+
+            .navbar-links a {
+                margin: 20px 0;
+                font-size: 1.8rem;
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            body.no-scroll {
+                overflow: hidden;
+            }
+        }
+
+        /* --- FIM DO CSS DA NAVBAR --- */
+        /* LAYOUT */
+        .service-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+            margin-top: 40px;
+        }
+
+        .content-area h1 {
+            color: var(--gold-primary);
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-area h2 {
+            color: var(--text-main);
+            font-size: 1.6rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--gold-primary);
+            padding-left: 15px;
+        }
+
+        .content-area p {
+            margin-bottom: 20px;
+            color: #d1d1d1;
+            font-size: 1.05rem;
+        }
+
+        .content-area ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .content-area ul li {
+            margin-bottom: 12px;
+            list-style-type: none;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .content-area ul li::before {
+            content: "•";
+            color: var(--gold-primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            height: fit-content;
+            border: 1px solid #1f2233;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar h3 {
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--gold-primary);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-links {
+            list-style: none;
+        }
+
+        .sidebar-links li {
+            border-bottom: 1px solid #2a2e45;
+            padding: 10px 0;
+        }
+
+        .sidebar-links a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-links a:hover {
+            color: var(--gold-primary);
+            transform: translateX(5px);
+        }
+
+        .btn-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--gold-primary);
+            color: #000;
+            padding: 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-top: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        .footer-contact-bar {
+            background-color: #222346;
+            padding: 50px 0 0 0;
+            color: #f0f0f0;
+            margin-top: 100px;
+        }
+
+        .footer-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding-bottom: 40px;
+        }
+
+        .footer-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-bar-item i {
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .footer-bar-item span,
+        .footer-bar-item a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom-info {
+            background-color: #1a1b36;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom-info .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0;
+        }
+
+        .credit {
+            font-size: 0.85rem;
+            margin: 0;
+            color: #888;
+        }
+
+        .credit a {
+            color: var(--gold-primary);
+            text-decoration: none;
+        }
+
+        /* WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            z-index: 100;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            .service-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html">
+                <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="SNA Logo"
+                    class="navbar-logo">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <div class="navbar-links" id="navbar-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="./servico_busca.html" class="nav-link">Serviços</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+                <a href="./nossa_equipe_busca.html" class="nav-link">Escritório</a>
+                <a href="./artigo_busca.html" class="nav-link">Artigos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container service-layout">
+        <article class="content-area">
+            <h1 id="srv-title">Carregando...</h1>
+            <p id="srv-intro"></p>
+            <h2 id="srv-subtitle1"></h2>
+            <p id="srv-text1"></p>
+            <ul id="srv-list"></ul>
+            <h2 id="srv-subtitle2"></h2>
+            <p id="srv-text2"></p>
+        </article>
+
+        <aside class="sidebar">
+            <h3>Outras Áreas</h3>
+            <ul class="sidebar-links" id="dynamic-menu">
+            </ul>
+            <a href="https://wa.me/+5532991233714" class="btn-cta">Falar com Advogado</a>
+        </aside>
+    </main>
+
+    <footer class="footer-contact-bar">
+        <div class="container">
+            <div class="footer-bar-grid">
+                <div class="footer-bar-item"><i class="fas fa-phone"></i><span>(32) 3217-1981</span></div>
+                <div class="footer-bar-item"><i class="fas fa-map-marker-alt"></i><span>Juiz de Fora - MG</span></div>
+                <div class="footer-bar-item"><i class="fas fa-envelope"></i><a
+                        href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a></div>
+            </div>
+        </div>
+        <div class="footer-bottom-info">
+            <div class="container">
+                <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
+                <p class="credit"><a href="https://landerup-dev.github.io/Portifolio/#hero">Lander Up</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Como posso ajudar?</span>
+    </a>
+
+    <script>
+
+        const database = {
+            "administrativo": {
+                title: "Direito Administrativo",
+                intro: "Assessoria completa perante a Administração Pública, garantindo a legalidade de atos e o sucesso em contratações públicas.",
+                sub1: "Licitações e Contratos",
+                txt1: "Assessoria em processos licitatórios, análise de editais, preparação de documentação e consultoria em regimes de concessão e permissão.",
+                list: [
+                    "Defesa em Autos de Infração e Sanções",
+                    "Recursos Administrativos Estratégicos",
+                    "Consultoria em Gestão Pública e Compliance",
+                    "Controle de Legalidade de Atos Administrativos"
+                ],
+                sub2: "Atuação Consultiva e Defesa",
+                txt2: "Representação junto a órgãos públicos e tribunais de contas, visando a anulação de atos nulos e a proteção de direitos contra decisões administrativas."
+            },
+            "bancario": {
+                title: "Direito Bancário",
+                intro: "Proteção contra abusos do sistema financeiro e estruturação de operações complexas de crédito e investimento.",
+                sub1: "Revisão e Reorganização",
+                txt1: "Análise de contratos de leasing, capital de giro, cheque especial e cédulas de crédito bancário para identificação de ilegalidades.",
+                list: [
+                    "Recuperação de Créditos",
+                    "Securitização de Recebíveis",
+                    "Fundos de Investimento Imobiliário",
+                    "Negociação de Dívidas Bancárias"
+                ],
+                sub2: "Operações Estruturadas",
+                txt2: "Consultoria contenciosa e preventiva para a estruturação de debêntures e novos modelos de financiamento empresarial."
+            },
+            "civil": {
+                title: "Direito Civil",
+                intro: "Atuação ampla no Direito Privado para regulamentar as relações entre pessoas e empresas, garantindo segurança jurídica e proteção patrimonial.",
+                sub1: "Contratos e Negócios",
+                txt1: "Elaboração, análise e revisão de instrumentos contratuais diversos, como locação, compra e venda e prestação de serviços, visando a mitigação de riscos.",
+                list: [
+                    "Responsabilidade Civil e Indenizações",
+                    "Gestão de Contencioso de Massa",
+                    "Defesa do Consumidor Empresarial",
+                    "Ações Coletivas e Individuais"
+                ],
+                sub2: "Resolução de Conflitos",
+                txt2: "Atuação estratégica em mediação e conciliação para soluções amigáveis, além de defesa vigorosa em processos judiciais e litígios complexos."
+            },
+            "consumidor_empresarial": {
+                title: "Consumidor Empresarial",
+                intro: "Blindagem jurídica para empresas em face das relações de consumo, focada na prevenção de danos e defesa administrativa e judicial.",
+                sub1: "Consultivo e Preventivo",
+                txt1: "Identificação de cláusulas abusivas em contratos de adesão e adequação de termos de fornecimento de produtos e serviços.",
+                list: [
+                    "Gestão de Planos de Saúde e Seguros",
+                    "Defesa em Ações Indenizatórias",
+                    "Tutelas Antecipadas e Cautelares",
+                    "Conformidade com o CDC"
+                ],
+                sub2: "Contencioso Estratégico",
+                txt2: "Propositura e impugnação de ações judiciais, com foco na redução de condenações por danos morais e materiais."
+            },
+            "contratos": {
+                title: "Contratos",
+                intro: "Assessoria consultiva completa na elaboração e revisão de instrumentos jurídicos para garantir máxima proteção em negócios civis e comerciais.",
+                sub1: "Elaboração e Revisão",
+                txt1: "Criação de contratos personalizados de compra e venda, permuta, doação, empreitada e parcerias comerciais.",
+                list: [
+                    "Contratos de Prestação de Serviços",
+                    "Arrendamento e Faturização",
+                    "Seguros e Transportes",
+                    "Acordos de Fornecimento"
+                ],
+                sub2: "Segurança Jurídica",
+                txt2: "Análise detalhada de cláusulas inominadas e garantias contratuais para mitigar riscos e evitar futuros litígios."
+            },
+            "medico": {
+                title: "Direito Médico",
+                intro: "Defesa técnica e consultoria especializada para profissionais da saúde e instituições, garantindo conformidade ética e segurança jurídica.",
+                sub1: "Defesa Profissional e Ética",
+                txt1: "Representação em processos administrativo-disciplinares perante conselhos de classe (CRM/CRO) e defesa em ações de responsabilidade civil por erro médico.",
+                list: [
+                    "Análise de Prontuários e Documentação",
+                    "Consultoria em Bioética e Consentimento",
+                    "Equiparação Hospitalar e Tributação",
+                    "Planejamento Previdenciário para Médicos"
+                ],
+                sub2: "Gestão de Contratos e Riscos",
+                txt2: "Elaboração de contratos de prestação de serviços, parcerias e convênios, além de auditoria preventiva para evitar litígios judiciais."
+            },
+            "passivos": {
+                title: "Administração de Passivos",
+                intro: "Estratégias jurídicas para empresas em crise, focadas no reequilíbrio financeiro e na proteção contra o endividamento bancário e tributário.",
+                sub1: "Pilares da Reestruturação",
+                txt1: "Atuação baseada na preservação da atividade empresarial, retomada do fluxo de caixa e proteção do patrimônio pessoal dos sócios.",
+                list: [
+                    "Combate a Juros e Tarifas Abusivas",
+                    "Defesa contra Penhoras e Arrolamentos",
+                    "Suspensão de Leilões e Execuções",
+                    "Blindagem de Bens dos Sócios"
+                ],
+                sub2: "Gestão de Dívidas",
+                txt2: "Negociação estratégica com bancos e fiscos para alongamento de prazos e redução de encargos, evitando pedidos de falência ou recuperação judicial."
+            },
+            "previdenciario": {
+                title: "Direito Previdenciário",
+                intro: "Soluções jurídicas para garantir benefícios previdenciários e otimizar a transição para a aposentadoria, tanto para indivíduos quanto para empresas.",
+                sub1: "Planejamento e Benefícios",
+                txt1: "Planejamento previdenciário estratégico para otimização de valores e auxílio na solicitação de aposentadorias, pensões e auxílio-doença.",
+                list: [
+                    "Revisão de Benefícios Concedidos",
+                    "Regularização de Contribuições e Débitos",
+                    "Mandados de Segurança e Ações Judiciais",
+                    "Consultoria Previdenciária para Empresas"
+                ],
+                sub2: "Defesa e Recursos",
+                txt2: "Representação em processos administrativos junto ao INSS contra indeferimentos e propositura de ações judiciais para assegurar direitos fundamentais."
+            },
+            "responsabilidade_civil": {
+                title: "Responsabilidade Civil",
+                intro: "Expertise em reparação de danos e defesa em casos de violação de direitos, sejam contratuais ou extracontratuais.",
+                sub1: "Indenizações e Reparações",
+                txt1: "Atuação em processos envolvendo danos materiais, morais, estéticos e danos à imagem ou honra.",
+                list: [
+                    "Danos à Dignidade da Pessoa",
+                    "Abalo de Crédito e Nome",
+                    "Pareceres Técnicos de Risco",
+                    "Responsabilidade Contratual"
+                ],
+                sub2: "Análise de Nexo Causal",
+                txt2: "Elaboração de teses defensivas e iniciais robustas para apuração de culpa e dever de indenizar em litígios complexos."
+            },
+            "societario": {
+                title: "Direito Societário",
+                intro: "Assessoria estratégica na estruturação, governança e resolução de conflitos em sociedades empresariais.",
+                sub1: "Constituição e Reestruturação",
+                txt1: "Orientação na escolha da estrutura jurídica ideal, elaboração de contratos sociais e execução de fusões, aquisições (M&A) e cisões.",
+                list: [
+                    "Acordos de Sócios e Acionistas",
+                    "Due Diligence Societária",
+                    "Dissolução de Sociedades e Distratos",
+                    "Compliance Societário e Regulatório"
+                ],
+                sub2: "Governança e Conflitos",
+                txt2: "Implementação de boas práticas de gestão, mediação de disputas entre sócios e representação em ações judiciais e extrajudiciais."
+            },
+            "trabalhista_empresarial": {
+                title: "Direito Trabalhista Empresarial",
+                intro: "Consultoria preventiva e defesa estratégica para empresas, focada na redução de passivos e na gestão eficiente de recursos humanos.",
+                sub1: "Prevenção e Compliance",
+                txt1: "Implementação de programas de conformidade, auditorias trabalhistas e criação de documentos preventivos como regimentos internos e contratos de confidencialidade.",
+                list: [
+                    "Treinamentos e Capacitação de Gestores",
+                    "Gestão de Benefícios e Planos de Cargos",
+                    "Auditoria de Riscos e Irregularidades",
+                    "Acordos de Confidencialidade e Teletrabalho"
+                ],
+                sub2: "Contencioso e Resolução de Conflitos",
+                txt2: "Defesa técnica em reclamações trabalhistas, representação em audiências e facilitação de acordos via mediação e conciliação."
+            },
+            "tributario": {
+                title: "Direito Tributário",
+                intro: "Consultoria e contencioso especializado para otimização da carga fiscal e garantia da conformidade legal de empresas e indivíduos.",
+                sub1: "Planejamento e Consultoria",
+                txt1: "Desenvolvimento de estratégias para reduzir a carga tributária de forma legal e assessoria na interpretação da legislação fiscal.",
+                list: [
+                    "Recuperação de Créditos e Auditoria Fiscal",
+                    "Due Diligence em Fusões e Aquisições",
+                    "Programas de Compliance Tributário",
+                    "Análise de Benefícios Fiscais"
+                ],
+                sub2: "Contencioso e Defesa",
+                txt2: "Representação em disputas judiciais e administrativas, contestando autuações e apresentando recursos perante a Receita Federal e outros órgãos."
+            }
+        };
+
+        function render() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentSrv = urlParams.get('s') || 'administrativo';
+            const data = database[currentSrv];
+
+            if (data) {
+                document.getElementById('srv-title').innerText = data.title;
+                document.getElementById('srv-intro').innerText = data.intro;
+                document.getElementById('srv-subtitle1').innerText = data.sub1;
+                document.getElementById('srv-text1').innerText = data.txt1;
+                document.getElementById('srv-subtitle2').innerText = data.sub2;
+                document.getElementById('srv-text2').innerText = data.txt2;
+                document.getElementById('srv-list').innerHTML = data.list.map(i => `<li>${i}</li>`).join('');
+                document.title = data.title + " | SNA";
+
+                // Gerar Menu Lateral (Removendo a atual e limitando a 9)
+                const menuKeys = Object.keys(database)
+                    .filter(key => key !== currentSrv) // Remove a atual
+                    .slice(0, 9); // Limita em 9 itens
+
+                document.getElementById('dynamic-menu').innerHTML = menuKeys.map(key =>
+                    `<li><a href="?s=${key}">${database[key].title}</a></li>`
+                ).join('');
+            }
+        }
+
+        window.onload = render;
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navbarLinks = document.getElementById('navbar-links');
+
+            // Scroll Navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
+
+            // Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('open');
+                navbarLinks.classList.toggle('open');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            // Fechar menu ao clicar no link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('open');
+                    navbarLinks.classList.remove('open');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
