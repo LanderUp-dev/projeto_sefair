@@ -305,15 +305,16 @@
 /* Garante que o container da nav alinhe corretamente */
 .navbar .container {
     display: flex !important;
-    justify-content: space-between !important;
+    justify-content: space-between !important; /* Isso empurra a logo para a esquerda e o menu para a direita */
     align-items: center !important;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px 20px; /* Mantém o mesmo respiro lateral da página de serviços */
 }
 
 .navbar-logo {
-    width: 90px;
+    width: 90px; /* Mantém o padrão de 90px */
+    display: block;
 }
 
 .navbar-links {
@@ -328,6 +329,7 @@
     font-weight: 300;
     transition: color 0.3s ease;
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .navbar-links a:hover {
@@ -338,8 +340,11 @@
    NAVBAR - VERSÃO MOBILE (CORES AJUSTADAS)
    ========================================= */
 @media (max-width: 900px) {
-    .menu-toggle {
+   .menu-toggle {
         display: flex;
+        /* Garante que o botão não tenha margens que o desalinhem */
+        margin-left: auto; 
+        order: 2; /* Garante que ele fique depois da logo se houver outros elementos */
     }
 
     .navbar-links {
@@ -882,6 +887,7 @@
             body {
                 max-width: 100%;
                 overflow-x: hidden;
+                padding-top: 35px;
                 /* Isso mata qualquer rolagem lateral indesejada */
             }
 
@@ -2497,25 +2503,27 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RWJ26LV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <nav class="navbar" id="main-nav">
-        <div class="container">
-            <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="" href="#"
-                class="navbar-logo">
-            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
+   <nav class="navbar" id="main-nav">
+    <div class="container">
+        <a href="./index.html">
+            <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo" class="navbar-logo">
+        </a>
 
-            <div class="navbar-links" id="navbar-links">
-                <a href="./index.html" class="nav-link">Início</a>
-                <a href="./pages/servico_busca.html" class="nav-link">Serviços</a>
-                <a href="./index.html#contato" class="nav-link">Contato</a>
-                <a href="./pages/nossa_equipe_busca.html" class="nav-link">Escritório</a>
-                <a href="./pages/artigo_busca.html" class="nav-link">Artigos</a>
-            </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
+        <div class="navbar-links" id="navbar-links">
+            <a href="./index.html" class="nav-link">Início</a>
+            <a href="./pages/servico_busca.html" class="nav-link">Serviços</a>
+            <a href="./index.html#contato" class="nav-link">Contato</a>
+            <a href="./pages/nossa_equipe_busca.html" class="nav-link">Escritório</a>
+            <a href="./pages/artigo_busca.html" class="nav-link">Artigos</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <header class="hero-section" id="inicio">
         <div class="container">
