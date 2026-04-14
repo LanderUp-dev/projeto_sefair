@@ -286,45 +286,87 @@
         /* =========================================
    NAVBAR - VERSÃO DESKTOP (PADRÃO)
    ========================================= */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: transparent;
-            transition: all 0.3s ease;
-        }
+     /* =========================================
+   NAVBAR - ESTILO IDENTICO AO PRIMEIRO
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Mudança: Agora inicia com a cor sólida, sem transparência */
+    background-color: var(--cor-fundo); 
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
 
-        .navbar.scrolled {
-            background-color: var(--cor-fundo);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
+/* Garante que o container da nav alinhe corretamente */
+.navbar .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .navbar .container {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 15px 20px;
-        }
+.navbar-logo {
+    width: 90px;
+}
 
-        .navbar-logo {
-            width: 90px;
-        }
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
 
-        .navbar-links {
-            display: flex;
-            flex-direction: row;
-            gap: 25px;
-        }
+.navbar-links a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
 
-        .navbar-links a {
-            color: var(--cor-texto);
-            text-decoration: none;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
+.navbar-links a:hover {
+    color: var(--cor-dourado);
+}
 
+/* =========================================
+   NAVBAR - VERSÃO MOBILE (CORES AJUSTADAS)
+   ========================================= */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        /* Usa a mesma cor de fundo da navbar principal */
+        background-color: var(--cor-fundo); 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .navbar-links.open {
+        transform: translateX(0);
+    }
+
+    .navbar-links a {
+        margin: 15px 0;
+        font-size: 1.5rem;
+        margin-left: 0; /* Remove a margem lateral no mobile */
+    }
+}
         .menu-toggle {
             display: none;
             /* ESCONDIDO NO PC */
@@ -340,40 +382,77 @@
             transition: 0.3s;
         }
 
-        /* =========================================
-   NAVBAR - VERSÃO MOBILE
+  /* =========================================
+   NAVBAR - VERSÃO MOBILE (AJUSTADO)
    ========================================= */
-        @media (max-width: 900px) {
-            .menu-toggle {
-                display: flex;
-                /* MOSTRA NO CELULAR */
-            }
 
-            .navbar-links {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 100vh;
-                background-color: var(--cor-fundo);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transform: translateX(100%);
-                /* Esconde lateralmente */
-                transition: transform 0.3s ease-in-out;
-            }
+/* Estilo Base do Botão */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Fica acima de tudo */
+}
 
-            .navbar-links.open {
-                transform: translateX(0);
-                /* Mostra ao clicar */
-            }
+.hamburger-bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--cor-dourado);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
 
-            .navbar-links a {
-                font-size: 1.8rem;
-                margin: 15px 0;
-            }
-        }
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--cor-fundo); /* Fundo sólido */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%); /* Começa fora da tela à direita */
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .navbar-links.open {
+        transform: translateX(0); /* Entra na tela */
+    }
+
+    .navbar-links a {
+        margin: 15px 0;
+        font-size: 1.5rem;
+    }
+
+    /* ANIMAÇÃO EM X (Exatamente como o primeiro código) */
+    .menu-toggle.open .hamburger-bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .hamburger-bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
+}
 
 
         /* 2. HERO: Centralização total de textos e formulário */
