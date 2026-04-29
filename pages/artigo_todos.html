@@ -217,26 +217,16 @@
             height: fit-content;
         }
 
+        /* Foto removida conforme solicitação */
         .profile-avatar {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 2px solid #d6b27c;
-            padding: 6px;
-        }
-
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
+            display: none;
         }
 
         .profile-name {
             color: #d6b27c;
             font-size: 22px;
             margin-bottom: 6px;
+            margin-top: 0; /* Ajuste após remoção da foto */
         }
 
         .profile-role {
@@ -309,7 +299,7 @@
 
             .profile-card {
                 order: 1;
-                margin: 0 auto;
+                margin: 0 auto 30px; /* Adicionado margem inferior */
             }
 
             .content-area {
@@ -382,6 +372,7 @@
 
     <main class="container service-layout">
         <aside class="profile-card">
+            <!-- Foto removida via CSS (display: none) -->
             <div class="profile-avatar">
                 <img id="autor-foto" src="https://via.placeholder.com/150" alt="Foto do autor">
             </div>
@@ -389,6 +380,7 @@
             <p class="profile-role" id="autor-cargo">Escritor do Artigo</p>
 
             <ul class="profile-info" id="autor-redes">
+                <!-- Conteúdo gerado pelo JavaScript -->
             </ul>
         </aside>
 
@@ -423,6 +415,38 @@
     </div>
 
     <script>
+        // Menu Mobile Script
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+        const body = document.body;
+
+        if (menuToggle && navbarLinks) {
+            menuToggle.addEventListener('click', function() {
+                const isOpen = navbarLinks.classList.contains('open');
+                
+                // Toggle classes
+                navbarLinks.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+                body.classList.toggle('no-scroll');
+                
+                // Acessibilidade
+                this.setAttribute('aria-expanded', !isOpen);
+            });
+
+            // Fecha o menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarLinks.classList.contains('open')) {
+                        navbarLinks.classList.remove('open');
+                        menuToggle.classList.remove('open');
+                        body.classList.remove('no-scroll');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwE_i2LuXb7YudY2lqUoMy9hqf7eU1sJGvK5QO16Ziy_smBbb10q4fkB2CFQAhwkT9h/exec";
 
         async function carregarArtigoIndividual() {
@@ -445,31 +469,31 @@
                 }
                 
 
-                // --- 1. PREENCHIMENTO DA SIDEBAR (AUTOR) ---
                 document.getElementById('autor-nome').innerText = artigo.autor || "Escritório SNA";
                 document.getElementById('autor-cargo').innerText = artigo.autor_cargo || "Consultoria Jurídica";
-                if (artigo.autor_foto) {
-                    document.getElementById('autor-foto').src = artigo.autor_foto;
-                }
+                
+          
 
                 const redesHtml = [];
-                redesHtml.push('<h3>Redes do Autor:</h3>');
-                if (artigo.linkedin) redesHtml.push(`<li><a href="${artigo.linkedin}" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>`);
-                if (artigo.instagram) redesHtml.push(`<li><a href="${artigo.instagram}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>`);
+         
+                redesHtml.push('<h3>Veja Também em:</h3>');
+
+                if (artigo.instagram) {
+                    redesHtml.push(`<li><a href="${artigo.instagram}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>`);
+                } else {
+                    redesHtml.push(`<li><a href="https://www.instagram.com/snadvogados/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>`);
+                }
+                
                 document.getElementById('autor-redes').innerHTML = redesHtml.join('');
 
-                // --- 2. PREENCHIMENTO DO CONTEÚDO (ARTIGO) ---
                 document.getElementById('art-titulo').innerText = artigo.titulo;
                 document.getElementById('page-title').innerText = artigo.titulo + " | SNA Advogados";
 
-                // Formata textos com quebra de linha
                 document.getElementById('art-intro').innerHTML = formatarTexto(artigo.conteudo_intro);
 
-                // Bloco 1
                 if (artigo.subtitulo_1) document.getElementById('art-sub1').innerText = artigo.subtitulo_1;
                 document.getElementById('art-texto1').innerHTML = formatarTexto(artigo.texto_1);
 
-                // Lista de Itens (separa por ;)
                 const listaUl = document.getElementById('art-lista');
                 listaUl.innerHTML = "";
                 if (artigo.lista_itens) {
