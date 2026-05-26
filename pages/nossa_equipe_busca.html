@@ -544,23 +544,23 @@
 
         const advogados = [
             { id: "sergio", nome: "Sérgio Sefair", cargo: "Sócio - Diretor", foto: "Sérgio.jpeg" },
-            { id: "katarina", nome: "Katarina Nascimento", cargo: "Sócia - Diretora", foto: "Katarina.PNG" },
-            { id: "fernanda", nome: "Fernanda Dutra", cargo: "Coordenadora Núcleo Cível", foto: "Fernanda.PNG" },
+            { id: "katarina", nome: "Katarina Nascimento", cargo: "Sócia - Diretora", foto: "Katarina.png" },
+            { id: "fernanda", nome: "Fernanda Dutra", cargo: "Coordenadora Núcleo Cível", foto: "Fernanda.png" },
             { id: "talitha", nome: "Talitha Bizzotti", cargo: "Coordenadora Núcleo Trabalhista", foto: "Talitha.jpg" },
-            { id: "vivian", nome: "Vívian Ambrósio", cargo: "Advogada", foto: "Vivian.PNG" },
+            { id: "vivian", nome: "Vívian Ambrósio", cargo: "Advogada", foto: "Vivian.png" },
             { id: "joao", nome: "João Victor", cargo: "Advogado", foto: "João.png" },
-            { id: "vanessa", nome: "Vanessa", cargo: "Advogada Trainee", foto: "Vanessa.PNG" },
-            { id: "diego", nome: "Diego Sefair", cargo: "Estagiário", foto: "DIEGO.PNG" },
+            { id: "vanessa", nome: "Vanessa", cargo: "Advogada Trainee", foto: "Vanessa.png" },
+            { id: "diego", nome: "Diego Sefair", cargo: "Estagiário", foto: "DIEGO.png" },
             { id: "eduarda", nome: "Eduarda", cargo: "Estagiária", foto: "Eduarda.jpg" },
             { id: "lucas", nome: "José Lucas Borges", cargo: "Assessor Comercial", foto: "Lucas.jpeg" },
-            { id: "lilian", nome: "Lilian Carriço", cargo: "Secretária Executiva", foto: "Lilian.PNG" }
+            { id: "lilian", nome: "Lilian Carriço", cargo: "Secretária Executiva", foto: "Lilian.png" }
         ];
 
         const grid = document.getElementById('teamGrid');
 
         // Renderiza os cards
         advogados.forEach(adv => {
-            const caminhoFoto = `./images/persons/${adv.foto}`;
+            const caminhoFoto = `../images/persons/${adv.foto}`;
 
             // Adicionamos o atributo data-id aqui para o script de clique funcionar
             grid.innerHTML += `
