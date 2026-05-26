@@ -101,70 +101,70 @@
 
         /* Menu Mobile */
         .menu-toggle {
-          display: none;
-          flex-direction: column;
-          justify-content: space-around;
-          width: 30px;
-          height: 25px;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          z-index: 101;
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
         }
 
         .hamburger-bar {
-          width: 100%;
-          height: 2px;
-          background-color: var(--gold-primary);
-          border-radius: 2px;
-          transition: all 0.3s ease-in-out;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
         }
 
         @media (max-width: 900px) {
-          .menu-toggle {
-            display: flex;
-          }
+            .menu-toggle {
+                display: flex;
+            }
 
-          .navbar-links {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: var(--bg-dark);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-          }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
 
-          .navbar-links.open {
-            transform: translateX(0);
-          }
+            .navbar-links.open {
+                transform: translateX(0);
+            }
 
-          .navbar-links a {
-            margin: 15px 0;
-            font-size: 1.5rem;
-          }
+            .navbar-links a {
+                margin: 15px 0;
+                font-size: 1.5rem;
+            }
 
-          /* Animação X do Hamburguer */
-          .menu-toggle.open .hamburger-bar:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-          }
+            /* Animação X do Hamburguer */
+            .menu-toggle.open .hamburger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
 
-          .menu-toggle.open .hamburger-bar:nth-child(2) {
-            opacity: 0;
-          }
+            .menu-toggle.open .hamburger-bar:nth-child(2) {
+                opacity: 0;
+            }
 
-          .menu-toggle.open .hamburger-bar:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-          }
+            .menu-toggle.open .hamburger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
 
-          body.no-scroll {
-            overflow: hidden;
-          }
+            body.no-scroll {
+                overflow: hidden;
+            }
         }
 
         /* LAYOUT PÁGINA INDIVIDUAL */
@@ -316,13 +316,19 @@
             border: 2px solid #d6b27c;
             padding: 6px;
             border-radius: 50%;
+            background-color: transparent;
         }
 
         .profile-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
             border-radius: 50%;
+            image-rendering: high-quality;
+            -webkit-font-smoothing: antialiased;
+            background-color: transparent;
+            display: block;
         }
 
         .profile-name {
@@ -418,7 +424,7 @@
                 transform: translateX(0);
             }
         }
-        
+
 
         @media (max-width: 768px) {
             .floating-whatsapp span {
@@ -531,143 +537,129 @@
         // 1. BANCO DE DADOS COMPLETO
         const database = {
             "sergio": {
-                name: "Dr. Sergio Sefair",
-                role: "Direito Empresarial",
-                img: "../images/persons/SERGIO-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 75.979", "Sócio Fundador", "Pós-Graduado FGV"],
-                intro: "Atua há 28 anos em Advocacia especializada em Direito Empresarial. Sócio da Sefair & Nascimento Advogados, unindo experiência clássica à visão moderna dos negócios.",
+                name: "Sérgio Sefair",
+                role: "Sócio - Diretor",
+                img: "../images/persons/Sérgio.jpeg",
+                brief: ["OAB/MG 75.979", "Sócio - Diretor", "Direito Empresarial e Societário"],
+                intro: "Atua há 28 anos na advocacia especializada em Direito Empresarial, oferecendo assessoria estratégica a empresas e sócios na estruturação, governança e expansão de negócios. Sua prática consolidada no cotidiano empresarial permite uma atuação alinhada às necessidades de empresários, sócios e gestores na tomada de decisões, com foco em resultados sustentáveis e governança corporativa.<br><br>Além da atuação consultiva e contenciosa em Direito Empresarial, participa ativamente de mesas de negociação entre sócios, investidores e executivos, conduzindo processos de reorganização societária, resolução de conflitos empresariais e estruturação de novos negócios.<br><br>Atuação como conselheiro estratégico e mentor de empresários, apoiando sócios e gestores na tomada de decisões relevantes, gestão de riscos jurídicos, governança corporativa e crescimento sustentável das empresas.",
                 sections: [
-                    { title: "Formação Acadêmica", list: ["Bacharel em Direito pela Faculdade Vianna Júnior", "Pós–Graduado em Direito Empresarial pela FGV", "Certificação Certified Coach, mentor & Counselor pelo INSTIAD", "Cursou EMPRETEC do Sebrae/ONU em 2018"] },
-                    { title: "Atuação Institucional", list: ["Presidente da Comissão de Direito Empresarial da OAB/MG – JF (2025/2027)", "Diretor de Expansão do BNI – Business Network International"] }
+                    { title: "Áreas de atuação", list: ["Direito Trabalhista empresarial", "Parcerias empresariais e hubs de negócio", "Negociações e operações societárias", "Planejamento estratégico", "Direito Empresarial e Societário", "Conselheiro estratégico"] },
+                    { title: "Formação", list: ["Pós-graduação em Direito Empresarial – Fundação Getúlio Vargas (FGV)", "Bacharelado em Direito – Faculdade de Ciências Jurídicas e Sociais Vianna Júnior", "Presidente da Comissão de Direito Empresarial da OAB/MG – Juiz de Fora- Triênio 2025/2027", "Diretor de Expansão do BNI (Business Network International) na Zona da Mata e no Campo das Vertentes, Minas Gerais", "Formação Empretec – SEBRAE"] }
                 ]
             },
             "katarina": {
-                name: "Dra. Katarina Nascimento",
-                role: "Direito Tributário e Corporativo",
-                img: "../images/persons/KATARINA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 106.263", "Sócia - Diretora", "LL.M em Direito Corporativo"],
-                intro: "Atua há 24 anos em advocacia especializada em Direito Tributário, com sólida experiência em consultoria empresarial e planejamento sucessório.",
-                sections: [{ title: "Formação Acadêmica", list: ["Bacharela em Direito pela Faculdade Vianna Júnior", "Pós-Graduada em Direito Empresarial pela FGV", "LL.M em Direito Corporativo pelo IBMEC - RJ"] }]
+                name: "Katarina Nascimento",
+                role: "Sócia - Diretora",
+                img: "../images/persons/Katarina.PNG",
+                brief: ["OAB/MG 106.263", "Sócia - Diretora", "Direito Empresarial"],
+                intro: "Atua há 24 anos na advocacia especializada em Direito Empresarial, exercendo papel de liderança jurídica na assessoria a empresas e sócios na organização jurídica dos negócios, no gerenciamento de riscos e na tomada de decisões estruturais. Sua atuação contribui para a consolidação de uma prática jurídica orientada por visão estratégica e multidisciplinar, integrando aspectos jurídicos, tributários, financeiros e operacionais.<br><br>Possui sólida experiência em Direito Tributário, tanto na esfera consultiva quanto contenciosa, bem como em planejamento tributário estratégico, aplicado às atividades empresariais. O tributário integra sua atuação como base técnica essencial à construção de soluções juridicamente seguras e economicamente eficientes, em permanente diálogo com o Direito Empresarial e com as necessidades concretas dos negócios assessorados.<br><br>Detém experiência relevante no contencioso de massa, especialmente no setor de Telecomunicações, com foco na gestão estratégica do contencioso, na análise de indicadores e no tratamento estruturado de dados e informações jurídicas, com o objetivo de subsidiar a tomada de decisões empresariais, reduzir passivos e aprimorar políticas internas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Planejamento jurídico estratégico", "Contencioso de Massa Estratégico", "Consultoria Jurídica para empresas", "Direito Tributário", "Direito Empresarial", "Gestão de Riscos, Dados e Informações Jurídicas"] },
+                    { title: "Formação", list: ["Especialização em Finanças para Advogados – Alumni COPPEAD (RJ)", "LL.M. (Master of Laws) em Direito Corporativo – IBMEC (Rio de Janeiro)", "Pós-graduação em Direito Empresarial – Fundação Getulio Vargas (FGV)", "Bacharelado em Direito – Faculdade de Ciências Jurídicas e Sociais Vianna Júnior", "Mantém formação continuada por meio de cursos de aperfeiçoamento e programas de atualização, com destaque para Reforma Tributária, Planejamento Tributário Estratégico, Planejamento Sucessório, Inovação Jurídica e Uso de Dados Jurídicos na Tomada de Decisões Empresariais, além da participação em congressos e feiras jurídicas e tecnológicas.", "Formação Empretec – SEBRAE", "Mantém constante atualização por meio de programas de aperfeiçoamento jurídico e empresarial, com foco em governança, inovação e desenvolvimento estratégico de negócios."] }
+                ]
             },
             "fernanda": {
-                name: "Dra. Fernanda Dutra",
-                role: "Civil e Tributário",
-                img: "../images/persons/FERNANDA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 133.878", "Coordenadora Jurídica"],
-                intro: "Advogada associada e coordenadora do núcleo jurídico de Direito Civil e Tributário da Sefair & Nascimento Advogados.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Granbery", "Especialista em Direito Processual"] }]
+                name: "Fernanda Dutra",
+                role: "Coordenadora Núcleo Cível",
+                img: "../images/persons/Fernanda.PNG",
+                brief: ["OAB/MG 133.878", "Coordenadora Núcleo Cível", "Direito Civil e Processual Civil"],
+                intro: "Com 20 anos de experiência na advocacia, possui atuação consolidada nas áreas de Direito Civil e Processual Civil, com ênfase em contencioso de massa no setor de Telecomunicações e na gestão estratégica de passivo tributário de médias e grandes empresas. Possui sólida expertise em gestão estratégica de processos, organização de fluxos internos e gestão de pessoas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Grambery (FMG/MG).", "Pós-graduanda em Legal Operations e Gestão Jurídica Estratégica pela Damásio Educacional.", "Participante de cursos de extensão nas áreas de Direito Civil, Processo Civil, Gestão de Pessoas, Liderança estratégica, LGPD e Inteligência Artificial aplicada à advocacia."] }
+                ]
             },
             "talitha": {
-                name: "Dra. Talitha Bizzotti",
-                role: "Direito do Trabalho",
-                img: "../images/persons/TALITHA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 177.197", "Coordenadora Trabalhista"],
-                intro: "Advogada associada e coordenadora do núcleo jurídico Trabalhista.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Granbery", "Pós-Graduada em Direito do Trabalho pela ESA"] }]
+                name: "Talitha Bizzotti",
+                role: "Coordenadora Núcleo Trabalhista",
+                img: "../images/persons/Talitha.jpg",
+                brief: ["OAB/MG 177.197", "Coordenadora Núcleo Trabalhista", "Direito do Trabalho"],
+                intro: "É advogada com atuação exclusiva em Direito do Trabalho Empresarial, com mais de 10 anos de experiência em contencioso estratégico e consultivo para empresas de médio e grande porte.<br><br>Coordena o Núcleo Trabalhista do escritório, sendo responsável pela gestão técnica e estratégica das demandas judiciais, condução de processos de média e alta complexidade e acompanhamento de contingências trabalhistas de relevante impacto financeiro. Atua na definição de estratégias processuais, estruturação de teses recursais, análise crítica de prova oral e documental e acompanhamento de demandas perante os Tribunais Regionais do Trabalho e o Tribunal Superior do Trabalho.<br><br>Iniciou sua trajetória no escritório ainda como estagiária, tendo desenvolvido sua carreira internamente até assumir a coordenação do setor trabalhista.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharel em Direito – Faculdade Metodista Granbery", "Pós-graduação em Direito do Trabalho e Processo do Trabalho – Escola Superior de Advocacia – OAB/MG", "Certificação em Língua Inglesa – Edward English School, Londres"] }
+                ]
             },
-            "allana": {
-                name: "Dra. Allana Garbelini",
-                role: "Cível e Consumerista",
-                img: "../images/persons/ALLANA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 164.469", "Legal Design Expert"],
-                intro: "Especialista em resolução de conflitos e proteção de dados.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela UFV", "Certificada em LGPD pela EXIN"] }]
-            },
-            "maria": {
-                name: "Dra. Maria Vitória",
-                role: "Advogada Associada",
-                img: "../images/persons/MARIA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB RJ nº 236.564", "Direito Civil"],
-                intro: "Advogada associada focada em soluções jurídicas personalizadas.",
-                sections: [{ title: "Formação", list: ["Graduada em Direito pela UFJF"] }]
-            },
-            "marina": {
-                name: "Dra. Marina Bomtempo",
-                role: "Direito do Trabalho",
-                img: "../images/persons/MARINA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 222.463", "Advogada Associada"],
-                intro: "Atua no núcleo trabalhista com foco em práticas modernas.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Doctum", "Pós-Graduada em Direito e Processo do Trabalho"] }]
-            },
+
             "vivian": {
-                name: "Dra. Vivian Ambrósio",
-                role: "Direito Trabalhista e Público",
-                img: "../images/persons/VIVIAN-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 192.261", "Especialista em Direito Público"],
-                intro: "Advogada associada com vasta formação acadêmica em Direito Público e Constitucional.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pelo Granbery", "Pós-Graduada em Direito Público"] }]
+                name: "Vívian Ambrósio",
+                role: "Advogada",
+                img: "../images/persons/Vivian.PNG",
+                brief: ["Advogada", "Núcleo Trabalhista", "Direito Empresarial"],
+                intro: "Advogada com sólida atuação no contencioso trabalhista empresarial, representando empregadores em demandas de alta complexidade, tanto de natureza massificada quanto estratégica. Possui ampla experiência na elaboração de peças processuais em todas as fases do processo, condução de audiências e definição de estratégias jurídicas voltadas à mitigação e gestão de passivos trabalhistas.<br><br>Atua perante Varas do Trabalho, Tribunais Regionais do Trabalho e Tribunal Superior do Trabalho, bem como na esfera administrativa, com defesa em autos de infração e inquéritos civis junto ao Ministério Público do Trabalho. Conta, ainda, com vivência complementar em Direito Empresarial, o que proporciona uma atuação integrada e alinhada às necessidades corporativas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Granbery - FMG (2017);", "Pós-Graduada em Direito Público pela Universidade Cândido Mendes – UCAM;", "Pós-Graduada em Direito Constitucional e pós-Graduanda em Direito do Trabalho pela Faculdade Legale;", "Pós-Graduada em Funções Institucionais da AGU pela Escola Superior da Advocacia Geral da União – ESAGU (2024);"] }
+                ]
             },
-            "jessica": {
-                name: "Dra. Jéssica Queiróz",
-                role: "Análise de Dados Jurídicos",
-                img: "../images/persons/JESSICA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 222.463", "Analista de Dados"],
-                intro: "Une a advocacia trabalhista à análise de dados para otimizar resultados.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Doctum", "Especialista em Análise de Dados Jurídicos"] }]
-            },
-            "luiza": {
-                name: "Dra. Luiza Novais",
-                role: "Direito Cível",
-                img: "../images/persons/LUIZA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 232.538", "Advogada Associada"],
-                intro: "Atua no núcleo cível com foco em Direito Civil.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pelo Granbery"] }]
-            },
-            "mariaeduarda": {
-                name: "Maria Eduarda Mourão",
-                role: "Controladoria Jurídica",
-                img: "../images/persons/MARIAEDUARDA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Controladoria", "Compliance"],
-                intro: "Responsável pela organização operacional do escritório.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Doctum"] }]
-            },
-            "julia": {
-                name: "Dra. Júlia Taroco",
-                role: "Direito Cível",
-                img: "../images/persons/JULIA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["OAB MG nº 238.992", "Advogada Associada"],
-                intro: "Advogada associada integrante do núcleo de Direito Cível.",
-                sections: [{ title: "Formação", list: ["Bacharela em Direito pela Doctum"] }]
-            },
-            "wilson": {
-                name: "Wilson Almeida",
-                role: "Assessor Comercial",
-                img: "../images/persons/WILSON-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Comercial", "Graduando"],
-                intro: "Interface comercial e estratégica do escritório.",
-                sections: [{ title: "Formação", list: ["Graduando em Direito pela Doctum"] }]
-            },
+
+
             "diego": {
                 name: "Diego Sefair",
                 role: "Estagiário",
-                img: "../images/persons/DIEGO-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Trabalhista", "Vianna Júnior"],
-                intro: "Apoio técnico ao núcleo de Direito Trabalhista.",
-                sections: [{ title: "Formação", list: ["Graduando pela Vianna Júnior"] }]
+                img: "../images/persons/DIEGO.PNG",
+                brief: ["Estagiário", "Núcleo Trabalhista", "Direito Trabalhista"],
+                intro: "",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Trabalhista", "Contencioso de massa"] },
+                    { title: "Formação", list: ["Graduando em Direito pela Faculdade de Ciências Jurídicas e Sociais Vianna Júnior."] }
+                ]
+            },
+
+            "vanessa": {
+                name: "Vanessa",
+                role: "Advogada Trainee",
+                img: "../images/persons/Vanessa.PNG",
+                brief: ["Advogada Trainee", "Núcleo Cível"],
+                intro: "",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Empresarial", "Contencioso de massa", "Contrato Social", "Contencioso Cível e Consumerista"] },
+                    { title: "Formação", list: ["Bacharela a em Direito pela Faculdade Metodista Granbery;", "Pós-graduanda em em Processo Civil na UniDoctum"] }
+                ]
+            },
+
+            "joao": {
+                name: "João Victor",
+                role: "Advogado",
+                img: "../images/persons/João.png",
+                brief: ["Advogado", "Núcleo Trabalhista"],
+                intro: "Advogado com atuação no contencioso trabalhista empresarial, representando empregadores em demandas de massa e estratégicas, com experiência na elaboração de peças processuais em todas as fases, realização de audiências e definição de estratégias voltadas à mitigação de passivos.<br><br>Atua perante Varas do Trabalho, Tribunais Regionais e Tribunal Superior do Trabalho, bem como na defesa administrativa em autos de infração e inquéritos civis perante o Ministério Público do Trabalho, com vivência complementar em direito tributário e empresarial.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Processual Trabalhista", "Direito Empresarial", "Contencioso trabalhista empresarial", "Direito Processual Tributário"] },
+                    { title: "Formação", list: ["Pós-Graduação em Direito do Trabalho e Processo do Trabalho – Instituto Legale Educacional (2025);", "Pós-Graduação em Direito Tributário e Processo Tributário – Instituto Legale Educacional (2025);", "Pós-Graduação em Direito Empresarial – Instituto Legale Educacional (2025);", "Bacharelado em Direito – Faculdade Metodista Granbery (2022);"] }
+                ]
+            },
+            "eduarda": {
+                name: "Eduarda",
+                role: "Estagiária",
+                img: "../images/persons/Eduarda.jpg",
+                brief: ["Estagiária", "Núcleo Trabalhista"],
+                intro: "Atua predominantemente em Contencioso Cível e Consumerista, com experiência na condução de demandas estratégicas e massificadas, representando clientes de grande porte nos setores de telecomunicações e varejo. Possui atuação nacional, com acompanhamento integral de carteiras processuais, desde a análise inicial até o encerramento da demanda, incluindo atuação em todas as fases e instâncias processuais.<br><br>Sua experiência contempla a elaboração de peças processuais, definição de estratégias jurídicas, realização de audiências, controle de prazos e gestão de fluxos internos, bem como interlocução direta com departamentos jurídicos internos de empresas. Atua tanto na esfera contenciosa quanto no suporte consultivo relacionado à mitigação de riscos, análise processual e padronização de teses defensivas.<br><br>Possui experiência consolidada no contencioso de massa, com domínio de sistemas processuais eletrônicos em âmbito nacional e rotinas de gestão de alto volume de demandas, sem prejuízo da atuação em casos com maior complexidade técnica e relevância estratégica.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso Cível", "Contencioso Consumerista", "Direito Civil", "Processo Civil", "Direito Empresarial", "Telecomunicações"] },
+                    { title: "Formação", list: ["Pós-graduação em Direito Civil e Processo Civil (em curso) – Legale Educacional (2025);", "Bacharelado em Direito – Instituto Metodista Granbery (2022)."] }
+                ]
+            },
+            "lucas": {
+                name: "José Lucas Borges",
+                role: "Assessor comercial",
+                img: "../images/persons/Lucas.jpeg",
+                brief: ["Assessor comercial", "Setor Comercial"],
+                intro: "Advogado com experiência em demandas consultivas e auditoria trabalhista empresarial, atuando na análise de riscos, organização de passivos e apoio estratégico à tomada de decisão de empresas, com foco em prevenção, conformidade e eficiência jurídica.<br><br>Atuação orientada à integração entre técnica jurídica, comunicação estratégica e inovação, com aplicação de Legal Operations e uso responsável de tecnologia para otimizar processos, melhorar a gestão jurídica e fortalecer o posicionamento institucional no ambiente corporativo.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Marketing jurídico", "Comunicação empresarial", "Relacionamento do cliente"] },
+                    { title: "Formação", list: ["Bacharel em Direito pela Universidade Federal de Juiz de Fora;", "Pós-graduado em Comunicação Empresarial e Marketing Digital pela Unicesumar;", "Pós-graduando em Controladoria Jurídica, Legal Operations e Inteligência Artificial pela Faculdade I9 Educação;"] }
+                ]
             },
             "lilian": {
                 name: "Lilian Carriço",
-                role: "Administrativo",
-                img: "../images/persons/LILIAN-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Secretária Executiva"],
-                intro: "Gestão administrativa e suporte à diretoria.",
-                sections: [{ title: "Atuação", list: ["Secretariado executivo"] }]
-            },
-            "vanessa": {
-                name: "Vanessa Alves",
-                role: "Estagiária",
-                img: "../images/persons/VANESSA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Cível", "Granbery"],
-                intro: "Estagiária dedicada ao suporte do núcleo de Direito Civil.",
-                sections: [{ title: "Formação", list: ["Graduanda pelo Granbery"] }]
-            },
-            "lunara": {
-                name: "Lunara Alves",
-                role: "Estagiária",
-                img: "../images/persons/LUNARA-equipe-snadv-juiz-de-foramg.png",
-                brief: ["Trabalhista", "Doctum"],
-                intro: "Estagiária integrante do núcleo trabalhista.",
-                sections: [{ title: "Formação", list: ["Graduanda pela Doctum"] }]
+                role: "Secretária Executiva",
+                img: "../images/persons/Lilian.PNG",
+                brief: ["Secretária Executiva", "Suporte Financeiro"],
+                intro: "Responsável pela gestão administrativa e pelo suporte executivo às atividades do escritório, atuando na organização das rotinas operacionais, no atendimento a clientes e na condução de demandas administrativas e financeiras. Sua atuação assegura a organização dos processos internos, a emissão e o controle de documentos administrativos e o suporte às rotinas de acompanhamento financeiro.<br><br>Atua na gestão do fluxo documental e na intermediação de comunicações entre advogados e administração, contribuindo para a coordenação das atividades internas e para a eficiência operacional do escritório. Também é responsável pelo suporte administrativo ao relacionamento com clientes e pela organização das rotinas institucionais, assegurando o adequado funcionamento da estrutura administrativa.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Suporte Financeiro", "Gestão Administrativa", "Gestão de Documentos e Fluxos Internos", "Atendimento e Relacionamento com clientes", "Organização Institucional"] }
+                ]
             }
         };
 

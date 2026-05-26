@@ -289,119 +289,119 @@
         /* =========================================
            NAVBAR - ESTILO
         ========================================= */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      /* Mudança: Fundo sempre sólido usando a variável de cor */
-      background-color: var(--navbar-bg);
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Mudança: Fundo sempre sólido usando a variável de cor */
+            background-color: var(--navbar-bg);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
 
 
-    .navbar .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        .navbar .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .navbar-logo {
-      width: 90px;
-    }
+        .navbar-logo {
+            width: 90px;
+        }
 
-    .navbar-links {
-      display: flex;
-      align-items: center;
-    }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
 
-    .navbar-links a {
-      color: var(--navbar-text);
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: 300;
-      font-family: 'Inter', 'Open Sans', sans-serif;
-      transition: color 0.3s ease;
-      font-size: 1rem;
-    }
+        .navbar-links a {
+            color: var(--navbar-text);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 300;
+            font-family: 'Inter', 'Open Sans', sans-serif;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
 
-    .navbar-links a:hover {
-      color: var(--navbar-gold);
-    }
+        .navbar-links a:hover {
+            color: var(--navbar-gold);
+        }
 
-    /* Menu Mobile */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 101;
-    }
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
 
-    .hamburger-bar {
-      width: 100%;
-      height: 2px;
-      background-color: var(--navbar-gold);
-      border-radius: 2px;
-      transition: all 0.3s ease-in-out;
-    }
+        .hamburger-bar {
+            width: 100%;
+            height: 2px;
+            background-color: var(--navbar-gold);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
 
-    @media (max-width: 900px) {
-      .menu-toggle {
-        display: flex;
-      }
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
 
-      .navbar-links {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: var(--navbar-bg);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--navbar-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
 
-      .navbar-links.open {
-        transform: translateX(0);
-      }
+            .navbar-links.open {
+                transform: translateX(0);
+            }
 
-      .navbar-links a {
-        margin: 15px 0;
-        font-size: 1.5rem;
-      }
+            .navbar-links a {
+                margin: 15px 0;
+                font-size: 1.5rem;
+            }
 
-      /* Animação X do Hamburguer */
-      .menu-toggle.open .hamburger-bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
+            /* Animação X do Hamburguer */
+            .menu-toggle.open .hamburger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
 
-      .menu-toggle.open .hamburger-bar:nth-child(2) {
-        opacity: 0;
-      }
+            .menu-toggle.open .hamburger-bar:nth-child(2) {
+                opacity: 0;
+            }
 
-      .menu-toggle.open .hamburger-bar:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-      }
+            .menu-toggle.open .hamburger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
 
-      body.no-scroll {
-        overflow: hidden;
-      }
-    }
+            body.no-scroll {
+                overflow: hidden;
+            }
+        }
 
 
         /* 2. HERO: Centralização total de textos e formulário */
@@ -551,7 +551,12 @@
             padding: 80px 0;
         }
 
-        .about-section .container {
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-body {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 60px;
@@ -587,7 +592,8 @@
         .carousel-slide {
             min-width: 100%;
             height: 100%;
-            background-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
             background-position: center;
             display: flex;
             align-items: center;
@@ -623,7 +629,7 @@
             right: 10px;
         }
 
-        .about-content h2 {
+        .about-header h2 {
             font-family: var(--fonte-titulo);
             font-size: 2.5rem;
             color: var(--cor-dourado);
@@ -631,7 +637,7 @@
             line-height: 1.1;
         }
 
-        .about-content h3 {
+        .about-header h3 {
             font-family: var(--fonte-corpo);
             font-size: 1.8rem;
             color: var(--cor-texto-escuro);
@@ -639,6 +645,7 @@
             font-weight: 300;
         }
 
+        .about-header p,
         .about-content p {
             font-size: 1.05rem;
             line-height: 1.7;
@@ -649,7 +656,7 @@
         @media (max-width: 900px) {
 
             .hero-section .container,
-            .about-section .container {
+            .about-body {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
@@ -671,6 +678,7 @@
                 max-width: 100%;
             }
 
+            .about-header p,
             .about-content p {
                 max-width: 100%;
             }
@@ -2454,6 +2462,103 @@
         .btn-gold-pill:active {
             transform: translateY(-1px);
         }
+        /* ==========================
+           Carrossel de Clientes
+           ========================== */
+        .clients-section {
+            width: 100%;
+            background-color: var(--branco, #ffffff);
+            padding: 10px 0; /* Padding reduzido para diminuir a div */
+            position: relative;
+        }
+
+        .clients-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .clients-header {
+            text-align: center;
+            margin-bottom: 10px; /* Margem reduzida */
+        }
+
+        .clients-header h2 {
+            font-size: 2.2rem;
+            color: var(--cor-azul-principal);
+            margin: 0 0 10px 0;
+            font-family: var(--fonte-titulo);
+        }
+
+        .clients-header p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .clients-header .divisor-gold {
+            width: 40px;
+            height: 3px;
+            background-color: var(--cor-dourado);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .clients-wrapper {
+            overflow: hidden;
+            position: relative;
+            /* Máscara de gradiente para suavizar as bordas */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .clients-track {
+            display: flex;
+            gap: 50px; /* Espaço um pouco maior para acomodar as logos maiores */
+            align-items: center;
+            width: max-content;
+            animation: clientsScroll 40s linear infinite;
+        }
+
+        .clients-track:hover {
+            animation-play-state: paused;
+        }
+
+        .clients-track img {   
+            transition: all 0.4s ease;
+            max-height: 200px; /* Tamanho das imagens aumentado significativamente */
+            height: 200px; /* Garante que todas tenham a mesma altura base para alinhamento */
+            width: auto;
+            flex: 0 0 auto;
+            object-fit: contain; /* Mantém a proporção e alinha dentro do espaço */
+        }
+
+        .clients-track img:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+        }
+
+        @keyframes clientsScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+            .clients-section {
+                padding: 15px 0;
+            }
+            .clients-header h2 {
+                font-size: 1.8rem;
+            }
+            .clients-track { 
+                gap: 40px; 
+            }
+            .clients-track img { 
+                max-height: 120px;
+                height: 120px; 
+            }
+        }
     </style>
 </head>
 
@@ -2462,28 +2567,28 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RWJ26LV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-  <nav class="navbar" id="main-nav">
-    <div class="container">
-      <a href="./index.html">
-        <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
-          class="navbar-logo">
-      </a>
+    <nav class="navbar" id="main-nav">
+        <div class="container">
+            <a href="./index.html">
+                <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
+                    class="navbar-logo">
+            </a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
 
-      <div class="navbar-links" id="navbar-links">
-        <a href="./index.html" class="nav-link">Início</a>
-        <a href="./pages/servico_busca.html" class="nav-link">Serviços</a>
-        <a href="./index.html#contato" class="nav-link">Contato</a>
-        <a href="./pages/nossa_equipe_busca.html" class="nav-link">Escritório</a>
-        <a href="./pages/artigo_busca.html" class="nav-link">Artigos</a>
-      </div>
-    </div>
-  </nav>
+            <div class="navbar-links" id="navbar-links">
+                <a href="./index.html" class="nav-link">Início</a>
+                <a href="./pages/servico_busca.html" class="nav-link">Serviços</a>
+                <a href="./index.html#contato" class="nav-link">Contato</a>
+                <a href="./pages/nossa_equipe_busca.html" class="nav-link">Escritório</a>
+                <a href="./pages/artigo_busca.html" class="nav-link">Artigos</a>
+            </div>
+        </div>
+    </nav>
 
     <header class="hero-section" id="inicio">
         <div class="container">
@@ -2511,7 +2616,7 @@
                         <input type="email" name="email" placeholder="E-mail" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="servico" placeholder="Servico Desejado" required maxlength="50">
+                        <input type="text" name="servico" placeholder="Serviço Desejado" required maxlength="50">
                     </div>
                     <div class="form-group">
                         <input type="tel" name="whatsapp" placeholder="Número de Whatsapp" required>
@@ -2764,51 +2869,64 @@
         <section class="about-section" id="sobre">
             <div class="container">
 
-                <div class="carousel-wrapper">
-                    <div class="carousel-container">
-                        <div class="carousel-slides" id="carouselSlides">
-                            <div class="carousel-slide"
-                                style="background-image: url('https://snadv.com.br/novo/wp-content/uploads/2025/11/1.jpg')">
-                            </div>
-                            <div class="carousel-slide"
-                                style="background-image: url('https://snadv.com.br/novo/wp-content/uploads/2025/11/2.jpg')">
-                            </div>
-                            <div class="carousel-slide"
-                                style="background-image: url('https://snadv.com.br/novo/wp-content/uploads/2025/11/3.jpg')">
-                            </div>
-                            <div class="carousel-slide"
-                                style="background-image: url('https://snadv.com.br/novo/wp-content/uploads/2025/11/4.jpg')">
-                            </div>
-                        </div>
-                        <button class="carousel-nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-                        <button class="carousel-nav-btn next" onclick="changeSlide(1)">&#10095;</button>
-                    </div>
-                </div>
-
-                <div class="about-content">
+                <div class="about-header">
                     <h2>Sobre Nós:</h2>
                     <h3>SEFAIR & NASCIMENTO ADVOGADOS</h3>
                     <p>
                         A Sefair & Nascimento Advogados é um escritório comprometido com a excelência jurídica, liderado
                         por
                         Sérgio
-                        Sefair e Katarina Nascimento
+                        Sefair e Katarina Nascimento.
                     </p>
-                    <p>
-                        <strong>Sérgio Sefair </strong> mais de 28 anos de experiência em advocacia especializada em
-                        Direito
-                        Empresarial e Tributário. Bacharel, pós-graduado, atuante também em cursos de liderança,
-                        empreendedorismo, com
-                        publicações, palestras, e envolvimento em organizações relevantes.
-                    </p>
-                    <p>
-                        <strong>Katarina Nascimento </strong> com 24 anos de experiência, especialização em Direito
-                        Tributário,
-                        pós-graduação em Direito Empresarial, mestre (LL.M.) em Direito Corporativo, participação
-                        intensa em
-                        cursos
-                        complementares.
-                    </p>
+                </div>
+
+                <div class="about-body">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="carouselSlides">
+                                <div class="carousel-slide"
+                                    style="background-image: url('./images/persons/Sociosfundadores.jpg')">
+                                </div>
+                            </div>
+                            <!-- <button class="carousel-nav-btn prev" onclick="changeSlide(-1)">&#10094;</button> -->
+                            <!-- <button class="carousel-nav-btn next" onclick="changeSlide(1)">&#10095;</button> -->
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <p>
+                            <strong>Sérgio Sefair </strong> é sócio-diretor com 28 anos de atuação em Direito
+                            Empresarial,
+                            prestando assessoria estratégica a empresas e sócios na estruturação, governança e expansão
+                            de
+                            negócios.
+                            Atua de forma destacada em negociações empresariais, reorganização societária, resolução de
+                            conflitos e estruturação de novos empreendimentos.
+                            Exerce papel de conselheiro estratégico e mentor de empresários, com foco em governança
+                            corporativa, gestão de riscos jurídicos e crescimento sustentável.
+                            É pós-graduado em Direito Empresarial pela FGV, Presidente da Comissão de Direito
+                            Empresarial da
+                            OAB/MG – Juiz de Fora (2025/2027) e Diretor de Expansão do BNI nas regiões da Zona da Mata e
+                            Campo das Vertentes/MG.
+                        </p>
+                        <p>
+                            <strong>Katarina Nascimento </strong> é sócia-diretora com mais de 25 anos de experiência em
+                            Direito Empresarial, com formação complementar nas áreas jurídica e financeira por
+                            instituições
+                            como FGV, IBMEC e COPPEAD.
+                            Atua com destaque no contencioso tributário e na gestão de passivos fiscais, desenvolvendo
+                            estratégias orientadas por dados e indicadores para apoiar empresas na tomada de decisões e
+                            na
+                            mitigação de riscos.
+                            Nos últimos anos, especializou-se na estruturação e gestão de contencioso de massa,
+                            especialmente para empresas do setor de telecomunicações, implementando processos e
+                            metodologias
+                            voltados à alta escala. Sua atuação está focada na transformação de dados jurídicos em
+                            inteligência estratégica, contribuindo para a redução de litígios e o aprimoramento de
+                            práticas
+                            empresariais.
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -2824,7 +2942,7 @@
 
                     <div class="coluna-texto hidden">
                         <h2>Atendemos em todo o Brasil!</h2>
-                        <h3>Atendimento Nacional: Levando Qualidade a Todo o Brasil.</h3>
+                        <h3>Atendimento nacional: levando qualidade a todo o Brasil.</h3>
 
                         <hr class="divisor-gold">
 
@@ -3080,6 +3198,47 @@
                 </iframe>
             </section>
 
+            <!-- Seção: Carrossel de Clientes -->
+            <section class="clients-section" id="clientes">
+                <div class="container">
+                    <div class="clients-header">
+                        <h2>Nossos Clientes</h2>
+                        <div class="divisor-gold"></div>
+                        <p>Empresas que confiam em nosso trabalho</p>
+                    </div>
+                    <div class="clients-wrapper" aria-hidden="false">
+                        <div class="clients-track" id="clientsTrack">
+                            <!-- As imagens serão geradas dinamicamente: ./images/Logo de Clientes/1.png → 24.png -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const track = document.getElementById('clientsTrack');
+                    if (!track) return;
+                    const folder = './images/Logo de Clientes/';
+                    const totalLogos = 24;
+
+                    // Gera as imagens de 1.png até 24.png
+                    for (let i = 1; i <= totalLogos; i++) {
+                        const img = document.createElement('img');
+                        img.src = folder + i + '.png';
+                        img.alt = 'Cliente ' + i;
+                        track.appendChild(img);
+                    }
+
+                    // Duplica as imagens para criar loop contínuo
+                    const originals = Array.from(track.children);
+                    originals.forEach(node => track.appendChild(node.cloneNode(true)));
+
+                    // Ajusta duração com base no número original de logos
+                    const duration = Math.max(18, totalLogos * 0.9);
+                    track.style.animationDuration = duration + 's';
+                });
+            </script>
+
             <footer class="footer-contact-bar" id="contato">
                 <div class="containerfooter">
                     <div class="footer-bar-grid">
@@ -3103,6 +3262,23 @@
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
                         </div>
+
+                        <a href="https://www.google.com/search?client=opera-gx&hs=zkT&sca_esv=68cd59949303f16d&sxsrf=ANbL-n4HebomJLV7YJr_wXlaLrdMNLt9pA:1779769638935&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVyA0d1bUS5hzAxipds5lUZGW99snItZ0TY3WvH0rKMYdP1HUCv8y4KiyYMk_gONijtKVF355cDFOWcCSeMQjkUWBZ_Q-yNil6tSe8qsY2otbd8fXARVhdeX7F-uupEg1pBCfD4%3D&q=Sefair+%26+Nascimento+Advogados+Coment%C3%A1rios&sa=X&ved=2ahUKEwj4kfHIjtaUAxVoqpUCHS7LC8IQ0bkNegQIJxAH&biw=1321&bih=613&dpr=1" target="_blank" rel="noopener noreferrer" class="footer-bar-item google-rating" style="display: flex; align-items: center; color: var(--cor-texto); text-decoration: none; cursor: pointer;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" style="width: 28px; height: 28px; margin-right: 12px; background: white; padding: 4px; border-radius: 50%;">
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <span style="font-weight: 700; font-size: 1.2rem;">5,0</span>
+                                    <div class="stars" style="color: #FABB05; font-size: 0.9rem; display: flex; gap: 2px;">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.9; text-decoration: underline;">Ver avaliações no Google</span>
+                            </div>
+                        </a>
 
                     </div>
                 </div>
