@@ -295,10 +295,21 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            /* Mudança: Fundo sempre sólido usando a variável de cor */
-            background-color: var(--navbar-bg);
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            
+            /* Mudança: Transparente no topo e sem sombra */
+            background-color: transparent; 
+            box-shadow: none;
+            padding: 15px 0; /* Um pouco mais espaçoso no topo */
+            
+            /* Transição suave para quando a cor/sombra mudar */
+            transition: all 0.4s ease-in-out; 
+        }
+
+        /* Classe ativada pelo seu JavaScript quando rola a página */
+        .navbar.scrolled {
+            background-color: var(--navbar-bg); /* Volta para o fundo escuro */
+            padding: 10px 0; /* Diminui um pouco o tamanho */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adiciona a sombra */
         }
 
 
