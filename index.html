@@ -295,23 +295,19 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            
-            /* Mudança: Transparente no topo e sem sombra */
-            background-color: transparent; 
+            background-color: transparent;
+            /* Nasce transparente */
             box-shadow: none;
-            padding: 15px 0; /* Um pouco mais espaçoso no topo */
-            
-            /* Transição suave para quando a cor/sombra mudar */
-            transition: all 0.4s ease-in-out; 
+            padding: 15px 0;
+            transition: all 0.4s ease-in-out;
         }
 
-        /* Classe ativada pelo seu JavaScript quando rola a página */
         .navbar.scrolled {
-            background-color: var(--navbar-bg); /* Volta para o fundo escuro */
-            padding: 10px 0; /* Diminui um pouco o tamanho */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adiciona a sombra */
+            background-color: var(--navbar-bg);
+            /* Fica azul ao descer */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
         }
-
 
         .navbar .container {
             display: flex;
@@ -855,14 +851,10 @@
             }
         }
 
-        @media (max-width: 720px) {
-
-            html,
+    @media (max-width: 720px) {
             body {
                 max-width: 100%;
-                overflow-x: hidden;
-                padding-top: 35px;
-                /* Isso mata qualquer rolagem lateral indesejada */
+                overflow-x: clip; 
             }
 
             .section-title {
@@ -998,10 +990,7 @@
         }
 
         @media (max-width: 768px) {
-            .navbar.scrolled {
-                background-color: var(--cor-azul-principal) !important;
-                padding: 10px 0;
-            }
+
 
             .why-choose-us-section {
                 padding: 60px 0;
@@ -1297,9 +1286,22 @@
         }
 
         @media (max-width: 900px) {
+
+            /* Garante que no celular/tablet comece 100% transparente no topo */
+            .navbar {
+                background-color: transparent !important;
+            }
+
+            /* Quando desce, fica azul com a sombra */
             .navbar.scrolled {
-                background-color: var(--cor-azul-principal) !important;
-                padding: 10px 0;
+                background-color: var(--navbar-bg) !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+                padding: 10px 0 !important;
+            }
+
+            /* Fundo sólido se o menu for aberto no topo da página */
+            .navbar:has(.menu-toggle.open) {
+                background-color: var(--navbar-bg) !important;
             }
 
             .lista-estados li {
@@ -2473,13 +2475,15 @@
         .btn-gold-pill:active {
             transform: translateY(-1px);
         }
+
         /* ==========================
            Carrossel de Clientes
            ========================== */
         .clients-section {
             width: 100%;
             background-color: var(--branco, #ffffff);
-            padding: 10px 0; /* Padding reduzido para diminuir a div */
+            padding: 10px 0;
+            /* Padding reduzido para diminuir a div */
             position: relative;
         }
 
@@ -2491,7 +2495,8 @@
 
         .clients-header {
             text-align: center;
-            margin-bottom: 10px; /* Margem reduzida */
+            margin-bottom: 10px;
+            /* Margem reduzida */
         }
 
         .clients-header h2 {
@@ -2526,7 +2531,8 @@
 
         .clients-track {
             display: flex;
-            gap: 50px; /* Espaço um pouco maior para acomodar as logos maiores */
+            gap: 50px;
+            /* Espaço um pouco maior para acomodar as logos maiores */
             align-items: center;
             width: max-content;
             animation: clientsScroll 40s linear infinite;
@@ -2536,13 +2542,16 @@
             animation-play-state: paused;
         }
 
-        .clients-track img {   
+        .clients-track img {
             transition: all 0.4s ease;
-            max-height: 200px; /* Tamanho das imagens aumentado significativamente */
-            height: 200px; /* Garante que todas tenham a mesma altura base para alinhamento */
+            max-height: 200px;
+            /* Tamanho das imagens aumentado significativamente */
+            height: 200px;
+            /* Garante que todas tenham a mesma altura base para alinhamento */
             width: auto;
             flex: 0 0 auto;
-            object-fit: contain; /* Mantém a proporção e alinha dentro do espaço */
+            object-fit: contain;
+            /* Mantém a proporção e alinha dentro do espaço */
         }
 
         .clients-track img:hover {
@@ -2551,23 +2560,31 @@
         }
 
         @keyframes clientsScroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
         }
 
         @media (max-width: 768px) {
             .clients-section {
                 padding: 15px 0;
             }
+
             .clients-header h2 {
                 font-size: 1.8rem;
             }
-            .clients-track { 
-                gap: 40px; 
+
+            .clients-track {
+                gap: 40px;
             }
-            .clients-track img { 
+
+            .clients-track img {
                 max-height: 120px;
-                height: 120px; 
+                height: 120px;
             }
         }
     </style>
@@ -3274,12 +3291,17 @@
                             <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
                         </div>
 
-                        <a href="https://www.google.com/search?client=opera-gx&hs=zkT&sca_esv=68cd59949303f16d&sxsrf=ANbL-n4HebomJLV7YJr_wXlaLrdMNLt9pA:1779769638935&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVyA0d1bUS5hzAxipds5lUZGW99snItZ0TY3WvH0rKMYdP1HUCv8y4KiyYMk_gONijtKVF355cDFOWcCSeMQjkUWBZ_Q-yNil6tSe8qsY2otbd8fXARVhdeX7F-uupEg1pBCfD4%3D&q=Sefair+%26+Nascimento+Advogados+Coment%C3%A1rios&sa=X&ved=2ahUKEwj4kfHIjtaUAxVoqpUCHS7LC8IQ0bkNegQIJxAH&biw=1321&bih=613&dpr=1" target="_blank" rel="noopener noreferrer" class="footer-bar-item google-rating" style="display: flex; align-items: center; color: var(--cor-texto); text-decoration: none; cursor: pointer;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" style="width: 28px; height: 28px; margin-right: 12px; background: white; padding: 4px; border-radius: 50%;">
+                        <a href="https://www.google.com/search?client=opera-gx&hs=zkT&sca_esv=68cd59949303f16d&sxsrf=ANbL-n4HebomJLV7YJr_wXlaLrdMNLt9pA:1779769638935&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVyA0d1bUS5hzAxipds5lUZGW99snItZ0TY3WvH0rKMYdP1HUCv8y4KiyYMk_gONijtKVF355cDFOWcCSeMQjkUWBZ_Q-yNil6tSe8qsY2otbd8fXARVhdeX7F-uupEg1pBCfD4%3D&q=Sefair+%26+Nascimento+Advogados+Coment%C3%A1rios&sa=X&ved=2ahUKEwj4kfHIjtaUAxVoqpUCHS7LC8IQ0bkNegQIJxAH&biw=1321&bih=613&dpr=1"
+                            target="_blank" rel="noopener noreferrer" class="footer-bar-item google-rating"
+                            style="display: flex; align-items: center; color: var(--cor-texto); text-decoration: none; cursor: pointer;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                alt="Google Logo"
+                                style="width: 28px; height: 28px; margin-right: 12px; background: white; padding: 4px; border-radius: 50%;">
                             <div style="display: flex; flex-direction: column; align-items: flex-start;">
                                 <div style="display: flex; align-items: center; gap: 6px;">
                                     <span style="font-weight: 700; font-size: 1.2rem;">5,0</span>
-                                    <div class="stars" style="color: #FABB05; font-size: 0.9rem; display: flex; gap: 2px;">
+                                    <div class="stars"
+                                        style="color: #FABB05; font-size: 0.9rem; display: flex; gap: 2px;">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -3287,7 +3309,9 @@
                                         <i class="fas fa-star"></i>
                                     </div>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.9; text-decoration: underline;">Ver avaliações no Google</span>
+                                <span
+                                    style="font-size: 0.85rem; font-weight: 400; opacity: 0.9; text-decoration: underline;">Ver
+                                    avaliações no Google</span>
                             </div>
                         </a>
 
