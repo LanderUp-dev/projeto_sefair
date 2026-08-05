@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title id="page-title">SNA Advogados</title>
+
+    <style>
+        /* =========================================
+           SEU CSS ORIGINAL - INTEGRALMENTE MANTIDO
+           ========================================= */
+        :root {
+            --bg-dark: #0a0c1a;
+            --bg-card: #141726;
+            --text-main: #f0f0f0;
+            --text-muted: #cccccc;
+            --gold-primary: #cba776;
+            --gold-hover: #b89565;
+            --font-main: 'Inter', sans-serif;
+            /* Mantido conforme seu envio, embora Lato seja carregada */
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-top: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--bg-dark);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            width: 90px;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar-links a {
+            color: var(--text-main);
+            font-weight: 300;
+            font-family: 'Inter', 'Open Sans', sans-serif;
+        }
+
+        .navbar-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger-bar {
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .navbar-links.open {
+                transform: translateX(0);
+            }
+
+            .navbar-links a {
+                margin: 15px 0;
+                font-size: 1.5rem;
+            }
+
+            /* Animação X do Hamburguer */
+            .menu-toggle.open .hamburger-bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open .hamburger-bar:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            body.no-scroll {
+                overflow: hidden;
+            }
+        }
+
+        /* LAYOUT PÁGINA INDIVIDUAL */
+        .service-layout {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* Conteúdo Principal */
+        .content-area h1 {
+            color: var(--gold-primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-area h2 {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--gold-primary);
+            padding-left: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-area p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .content-area ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content-area ul li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .footer-contact-bar {
+            background-color: var(--cor-outro-azul, #222346);
+            padding: 40px 0;
+            color: #f0f0f0;
+        }
+
+        .footer-contact-bar .containerfooter {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: fit-content;
+        }
+
+        .footer-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-bar-item i {
+            color: var(--cor-dourado, #cba776);
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        .footer-bar-item a,
+        .footer-bar-item span {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .footer-bar-item a:hover {
+            color: var(--cor-dourado, #cba776);
+        }
+
+        .footer-bottom {
+            background-color: var(--cor-azul-mais-escuro, #2b2c48);
+            padding: 20px 0;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-bottom .credit a {
+            color: var(--cor-dourado, #cba776);
+        }
+
+        /* WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 65px;
+            right: 25px;
+            z-index: 100;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-whatsapp i {
+            font-size: 1.5rem;
+        }
+
+        /* SEU DESIGN DE PERFIL - INTEGRALMENTE MANTIDO */
+        .profile-card {
+            background: linear-gradient(180deg, #0b1020, #0a0f1c);
+            padding: 32px 28px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: fit-content;
+            border-radius: 12px;
+            /* Adicionado para garantir o visual arredondado que você quer */
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border: 2px solid #d6b27c;
+            padding: 6px;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 50%;
+            image-rendering: high-quality;
+            -webkit-font-smoothing: antialiased;
+            background-color: transparent;
+            display: block;
+        }
+
+        .profile-name {
+            color: #d6b27c;
+            font-size: 22px;
+            margin-bottom: 6px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .profile-role {
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 22px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .profile-info {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px 0;
+            text-align: left;
+        }
+
+        .profile-info li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-info li:last-child {
+            border-bottom: none;
+        }
+
+        .profile-button {
+            display: block;
+            background: #d6b27c;
+            color: #0b1020;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .profile-button:hover {
+            background: #e7c892;
+            transform: translateY(-2px);
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .service-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-card {
+                order: 1;
+                max-width: 100%;
+            }
+
+            .content-area {
+                order: 2;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                background-color: var(--bg-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .navbar-links.active {
+                transform: translateX(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .floating-whatsapp span {
+                display: none;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+                padding: 0;
+                justify-content: center;
+            }
+
+            .floating-whatsapp i {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="main-nav">
+        <div class="container">
+            <a href="../index.html">
+                <img src="https://snadv.com.br/novo/wp-content/uploads/2024/10/logo-snadv-top-site.png" alt="Logo SNA"
+                    class="navbar-logo">
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <div class="navbar-links" id="navbar-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="./servico_busca.html" class="nav-link">Serviços</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+                <a href="./nossa_equipe_busca.html" class="nav-link">Escritório</a>
+                <a href="./artigo_busca.html" class="nav-link">Artigos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container service-layout">
+        <aside class="profile-card">
+            <div class="profile-avatar">
+                <img id="adv-img"
+                    src="https://snadv.com.br/novo/wp-content/uploads/2024/10/cropped-logo-enviada-snadv-favicon.png"
+                    alt="Foto do advogado">
+            </div>
+
+            <h3 class="profile-name" id="adv-name-sidebar">Carregando...</h3>
+            <p class="profile-role" id="adv-role">Área de Atuação</p>
+
+            <ul class="profile-info" id="adv-brief-info">
+                <li>⚖️ OAB...</li>
+                <li>🎓 Formação...</li>
+                <li>💼 Experiência...</li>
+            </ul>
+
+            <a href="https://wa.me/+5532991233714" class="profile-button">
+                Fale com um Especialista
+            </a>
+        </aside>
+
+        <article class="content-area" id="adv-content">
+            <h1>Sobre Mim</h1>
+            <p>Carregando informações...</p>
+        </article>
+
+    </main>
+
+    <footer class="footer-contact-bar" id="contato">
+        <div class="containerfooter">
+            <div class="footer-bar-grid">
+                <div class="footer-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:3232171981">(32) 3217-1981 / (32) 9 9123-3714</a>
+                </div>
+                <div class="footer-bar-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Segunda a Sexta-feira: 9h00 - 18h30</span>
+                </div>
+                <div class="footer-bar-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Av: Olegário Maciel, 770, Juiz de Fora - MG</span>
+                </div>
+                <div class="footer-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:snadv@snadv.com.br">snadv@snadv.com.br</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="containerfooter container">
+            <p class="copyright">© Copyright SNA Todos os direitos reservados.</p>
+            <p class="credit">Desenvolvido por <a href="https://landerup-dev.github.io/Portifolio/">Lander Up</a></p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/+5532991233714" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Como posso te ajudar?</span>
+    </a>
+    <script>
+        // 1. BANCO DE DADOS COMPLETO
+        const database = {
+            "sergio": {
+                name: "Sérgio Sefair",
+                role: "Sócio - Diretor",
+                img: "../images/persons/sergio.jpeg",
+                brief: ["OAB/MG 75.979", "Sócio - Diretor", "Direito Empresarial e Societário"],
+                intro: "Atua há 28 anos na advocacia especializada em Direito Empresarial, oferecendo assessoria estratégica a empresas e sócios na estruturação, governança e expansão de negócios. Sua prática consolidada no cotidiano empresarial permite uma atuação alinhada às necessidades de empresários, sócios e gestores na tomada de decisões, com foco em resultados sustentáveis e governança corporativa.<br><br>Além da atuação consultiva e contenciosa em Direito Empresarial, participa ativamente de mesas de negociação entre sócios, investidores e executivos, conduzindo processos de reorganização societária, resolução de conflitos empresariais e estruturação de novos negócios.<br><br>Atuação como conselheiro estratégico e mentor de empresários, apoiando sócios e gestores na tomada de decisões relevantes, gestão de riscos jurídicos, governança corporativa e crescimento sustentável das empresas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Trabalhista empresarial", "Parcerias empresariais e hubs de negócio", "Negociações e operações societárias", "Planejamento estratégico", "Direito Empresarial e Societário", "Conselheiro estratégico"] },
+                    { title: "Formação", list: ["Pós-graduação em Direito Empresarial – Fundação Getúlio Vargas (FGV)", "Bacharelado em Direito – Faculdade de Ciências Jurídicas e Sociais Vianna Júnior", "Presidente da Comissão de Direito Empresarial da OAB/MG – Juiz de Fora- Triênio 2025/2027", "Diretor de Expansão do BNI (Business Network International) na Zona da Mata e no Campo das Vertentes, Minas Gerais", "Formação Empretec – SEBRAE"] }
+                ]
+            },
+            "katarina": {
+                name: "Katarina Nascimento",
+                role: "Sócia - Diretora",
+                img: "../images/persons/Katarina.png",
+                brief: ["OAB/MG 106.263", "Sócia - Diretora", "Direito Empresarial"],
+                intro: "Atua há 24 anos na advocacia especializada em Direito Empresarial, exercendo papel de liderança jurídica na assessoria a empresas e sócios na organização jurídica dos negócios, no gerenciamento de riscos e na tomada de decisões estruturais. Sua atuação contribui para a consolidação de uma prática jurídica orientada por visão estratégica e multidisciplinar, integrando aspectos jurídicos, tributários, financeiros e operacionais.<br><br>Possui sólida experiência em Direito Tributário, tanto na esfera consultiva quanto contenciosa, bem como em planejamento tributário estratégico, aplicado às atividades empresariais. O tributário integra sua atuação como base técnica essencial à construção de soluções juridicamente seguras e economicamente eficientes, em permanente diálogo com o Direito Empresarial e com as necessidades concretas dos negócios assessorados.<br><br>Detém experiência relevante no contencioso de massa, especialmente no setor de Telecomunicações, com foco na gestão estratégica do contencioso, na análise de indicadores e no tratamento estruturado de dados e informações jurídicas, com o objetivo de subsidiar a tomada de decisões empresariais, reduzir passivos e aprimorar políticas internas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Planejamento jurídico estratégico", "Contencioso de Massa Estratégico", "Consultoria Jurídica para empresas", "Direito Tributário", "Direito Empresarial", "Gestão de Riscos, Dados e Informações Jurídicas"] },
+                    { title: "Formação", list: ["Especialização em Finanças para Advogados – Alumni COPPEAD (RJ)", "LL.M. (Master of Laws) em Direito Corporativo – IBMEC (Rio de Janeiro)", "Pós-graduação em Direito Empresarial – Fundação Getulio Vargas (FGV)", "Bacharelado em Direito – Faculdade de Ciências Jurídicas e Sociais Vianna Júnior", "Mantém formação continuada por meio de cursos de aperfeiçoamento e programas de atualização, com destaque para Reforma Tributária, Planejamento Tributário Estratégico, Planejamento Sucessório, Inovação Jurídica e Uso de Dados Jurídicos na Tomada de Decisões Empresariais, além da participação em congressos e feiras jurídicas e tecnológicas.", "Formação Empretec – SEBRAE", "Mantém constante atualização por meio de programas de aperfeiçoamento jurídico e empresarial, com foco em governança, inovação e desenvolvimento estratégico de negócios."] }
+                ]
+            },
+            "fernanda": {
+                name: "Fernanda Dutra",
+                role: "Coordenadora Núcleo Cível",
+                img: "../images/persons/Fernanda.png",
+                brief: ["OAB/MG 133.878", "Coordenadora Núcleo Cível", "Direito Civil e Processual Civil"],
+                intro: "Com 20 anos de experiência na advocacia, possui atuação consolidada nas áreas de Direito Civil e Processual Civil, com ênfase em contencioso de massa no setor de Telecomunicações e na gestão estratégica de passivo tributário de médias e grandes empresas. Possui sólida expertise em gestão estratégica de processos, organização de fluxos internos e gestão de pessoas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Grambery (FMG/MG).", "Pós-graduanda em Legal Operations e Gestão Jurídica Estratégica pela Damásio Educacional.", "Participante de cursos de extensão nas áreas de Direito Civil, Processo Civil, Gestão de Pessoas, Liderança estratégica, LGPD e Inteligência Artificial aplicada à advocacia."] }
+                ]
+            },
+            "talitha": {
+                name: "Talitha Bizzotti",
+                role: "Coordenadora Núcleo Trabalhista",
+                img: "../images/persons/Talitha.jpg",
+                brief: ["OAB/MG 177.197", "Coordenadora Núcleo Trabalhista", "Direito do Trabalho"],
+                intro: "É advogada com atuação exclusiva em Direito do Trabalho Empresarial, com mais de 10 anos de experiência em contencioso estratégico e consultivo para empresas de médio e grande porte.<br><br>Coordena o Núcleo Trabalhista do escritório, sendo responsável pela gestão técnica e estratégica das demandas judiciais, condução de processos de média e alta complexidade e acompanhamento de contingências trabalhistas de relevante impacto financeiro. Atua na definição de estratégias processuais, estruturação de teses recursais, análise crítica de prova oral e documental e acompanhamento de demandas perante os Tribunais Regionais do Trabalho e o Tribunal Superior do Trabalho.<br><br>Iniciou sua trajetória no escritório ainda como estagiária, tendo desenvolvido sua carreira internamente até assumir a coordenação do setor trabalhista.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharel em Direito – Faculdade Metodista Granbery", "Pós-graduação em Direito do Trabalho e Processo do Trabalho – Escola Superior de Advocacia – OAB/MG", "Certificação em Língua Inglesa – Edward English School, Londres"] }
+                ]
+            },
+
+            "vivian": {
+                name: "Vívian Ambrósio",
+                role: "Advogada",
+                img: "../images/persons/Vivian.png",
+                brief: ["Advogada", "Núcleo Trabalhista", "Direito Empresarial"],
+                intro: "Advogada com sólida atuação no contencioso trabalhista empresarial, representando empregadores em demandas de alta complexidade, tanto de natureza massificada quanto estratégica. Possui ampla experiência na elaboração de peças processuais em todas as fases do processo, condução de audiências e definição de estratégias jurídicas voltadas à mitigação e gestão de passivos trabalhistas.<br><br>Atua perante Varas do Trabalho, Tribunais Regionais do Trabalho e Tribunal Superior do Trabalho, bem como na esfera administrativa, com defesa em autos de infração e inquéritos civis junto ao Ministério Público do Trabalho. Conta, ainda, com vivência complementar em Direito Empresarial, o que proporciona uma atuação integrada e alinhada às necessidades corporativas.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso de massa", "Gestão de pessoas", "Gestão estratégica de processos", "Telecomunicações", "Direito civil, consumidor e tributário", "Otimização de fluxos e procedimentos"] },
+                    { title: "Formação", list: ["Bacharela em Direito pela Faculdade Metodista Granbery - FMG (2017);", "Pós-Graduada em Direito Público pela Universidade Cândido Mendes – UCAM;", "Pós-Graduada em Direito Constitucional e pós-Graduanda em Direito do Trabalho pela Faculdade Legale;", "Pós-Graduada em Funções Institucionais da AGU pela Escola Superior da Advocacia Geral da União – ESAGU (2024);"] }
+                ]
+            },
+
+
+            "diego": {
+                name: "Diego Sefair",
+                role: "Estagiário",
+                img: "../images/persons/DIEGO.png",
+                brief: ["Estagiário", "Núcleo Trabalhista", "Direito Trabalhista"],
+                intro: "",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Trabalhista", "Contencioso de massa"] },
+                    { title: "Formação", list: ["Graduando em Direito pela Faculdade de Ciências Jurídicas e Sociais Vianna Júnior."] }
+                ]
+            },
+
+            "vanessa": {
+                name: "Vanessa",
+                role: "Advogada Trainee",
+                img: "../images/persons/Vanessa.png",
+                brief: ["Advogada Trainee", "Núcleo Cível"],
+                intro: "",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Empresarial", "Contencioso de massa", "Contrato Social", "Contencioso Cível e Consumerista"] },
+                    { title: "Formação", list: ["Bacharela a em Direito pela Faculdade Metodista Granbery;", "Pós-graduanda em em Processo Civil na UniDoctum"] }
+                ]
+            },
+
+            "joao": {
+                name: "João Victor",
+                role: "Advogado",
+                img: "../images/persons/joao.jpg",
+                brief: ["Advogado", "Núcleo Trabalhista"],
+                intro: "Advogado com atuação no contencioso trabalhista empresarial, representando empregadores em demandas de massa e estratégicas, com experiência na elaboração de peças processuais em todas as fases, realização de audiências e definição de estratégias voltadas à mitigação de passivos.<br><br>Atua perante Varas do Trabalho, Tribunais Regionais e Tribunal Superior do Trabalho, bem como na defesa administrativa em autos de infração e inquéritos civis perante o Ministério Público do Trabalho, com vivência complementar em direito tributário e empresarial.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Direito Processual Trabalhista", "Direito Empresarial", "Contencioso trabalhista empresarial", "Direito Processual Tributário"] },
+                    { title: "Formação", list: ["Pós-Graduação em Direito do Trabalho e Processo do Trabalho – Instituto Legale Educacional (2025);", "Pós-Graduação em Direito Tributário e Processo Tributário – Instituto Legale Educacional (2025);", "Pós-Graduação em Direito Empresarial – Instituto Legale Educacional (2025);", "Bacharelado em Direito – Faculdade Metodista Granbery (2022);"] }
+                ]
+            },
+            "eduarda": {
+                name: "Eduarda",
+                role: "Estagiária",
+                img: "../images/persons/Eduarda.jpg",
+                brief: ["Estagiária", "Núcleo Trabalhista"],
+                intro: "Atua predominantemente em Contencioso Cível e Consumerista, com experiência na condução de demandas estratégicas e massificadas, representando clientes de grande porte nos setores de telecomunicações e varejo. Possui atuação nacional, com acompanhamento integral de carteiras processuais, desde a análise inicial até o encerramento da demanda, incluindo atuação em todas as fases e instâncias processuais.<br><br>Sua experiência contempla a elaboração de peças processuais, definição de estratégias jurídicas, realização de audiências, controle de prazos e gestão de fluxos internos, bem como interlocução direta com departamentos jurídicos internos de empresas. Atua tanto na esfera contenciosa quanto no suporte consultivo relacionado à mitigação de riscos, análise processual e padronização de teses defensivas.<br><br>Possui experiência consolidada no contencioso de massa, com domínio de sistemas processuais eletrônicos em âmbito nacional e rotinas de gestão de alto volume de demandas, sem prejuízo da atuação em casos com maior complexidade técnica e relevância estratégica.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Contencioso Cível", "Contencioso Consumerista", "Direito Civil", "Processo Civil", "Direito Empresarial", "Telecomunicações"] },
+                    { title: "Formação", list: ["Pós-graduação em Direito Civil e Processo Civil (em curso) – Legale Educacional (2025);", "Bacharelado em Direito – Instituto Metodista Granbery (2022)."] }
+                ]
+            },
+            "lucas": {
+                name: "José Lucas Borges",
+                role: "Assessor comercial",
+                img: "../images/persons/Lucas.jpeg",
+                brief: ["Assessor comercial", "Setor Comercial"],
+                intro: "Advogado com experiência em demandas consultivas e auditoria trabalhista empresarial, atuando na análise de riscos, organização de passivos e apoio estratégico à tomada de decisão de empresas, com foco em prevenção, conformidade e eficiência jurídica.<br><br>Atuação orientada à integração entre técnica jurídica, comunicação estratégica e inovação, com aplicação de Legal Operations e uso responsável de tecnologia para otimizar processos, melhorar a gestão jurídica e fortalecer o posicionamento institucional no ambiente corporativo.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Marketing jurídico", "Comunicação empresarial", "Relacionamento do cliente"] },
+                    { title: "Formação", list: ["Bacharel em Direito pela Universidade Federal de Juiz de Fora;", "Pós-graduado em Comunicação Empresarial e Marketing Digital pela Unicesumar;", "Pós-graduando em Controladoria Jurídica, Legal Operations e Inteligência Artificial pela Faculdade I9 Educação;"] }
+                ]
+            },
+            "lilian": {
+                name: "Lilian Carriço",
+                role: "Secretária Executiva",
+                img: "../images/persons/LILIAN.png",
+                brief: ["Secretária Executiva", "Suporte Financeiro"],
+                intro: "Responsável pela gestão administrativa e pelo suporte executivo às atividades do escritório, atuando na organização das rotinas operacionais, no atendimento a clientes e na condução de demandas administrativas e financeiras. Sua atuação assegura a organização dos processos internos, a emissão e o controle de documentos administrativos e o suporte às rotinas de acompanhamento financeiro.<br><br>Atua na gestão do fluxo documental e na intermediação de comunicações entre advogados e administração, contribuindo para a coordenação das atividades internas e para a eficiência operacional do escritório. Também é responsável pelo suporte administrativo ao relacionamento com clientes e pela organização das rotinas institucionais, assegurando o adequado funcionamento da estrutura administrativa.",
+                sections: [
+                    { title: "Áreas de atuação", list: ["Suporte Financeiro", "Gestão Administrativa", "Gestão de Documentos e Fluxos Internos", "Atendimento e Relacionamento com clientes", "Organização Institucional"] }
+                ]
+            }
+        };
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.getElementById('main-nav');
+            const menuToggle = document.getElementById('menu-toggle');
+            const navbarLinks = document.getElementById('navbar-links');
+
+            // Scroll Navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
+
+            // Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('open');
+                navbarLinks.classList.toggle('open');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            // Fechar menu ao clicar no link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('open');
+                    navbarLinks.classList.remove('open');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+
+        });
+
+        function renderProfile() {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            // Tenta pegar o ID tanto de 'adv' quanto de 'id' (prevenção)
+            const advId = urlParams.get('adv') || urlParams.get('id');
+
+            // Se o ID não existe no banco, mostramos erro em vez de redirecionar para evitar loop
+            if (!advId || !database[advId]) {
+                document.getElementById('adv-content').innerHTML = `
+                <div style="padding: 100px 20px; text-align: center;">
+                    <h1 style="color: #cba776;">Colaborador não encontrado</h1>
+                    <p style="color: #fff;">Por favor, volte para a página anterior e selecione um membro da equipe.</p>
+                    <a href="nossa_equipe_busca.html" style="color: #cba776; text-decoration: underline;">Voltar para Equipe</a>
+                </div>`;
+                return;
+            }
+
+            const data = database[advId];
+
+            // Preencher os campos
+            document.title = data.name + " | SNA Advogados";
+            document.getElementById('adv-img').src = data.img;
+            document.getElementById('adv-img').alt = data.name;
+            document.getElementById('adv-name-sidebar').innerText = data.name;
+            document.getElementById('adv-role').innerText = data.role;
+            document.getElementById('adv-brief-info').innerHTML = data.brief.map(item => `<li>${item}</li>`).join('');
+
+            // Conteúdo
+            let contentHtml = `<h1>Sobre Mim</h1><p class="intro">${data.intro}</p>`;
+            data.sections.forEach(section => {
+                contentHtml += `<h2>${section.title}</h2><ul>`;
+                section.list.forEach(item => { contentHtml += `<li>${item}</li>`; });
+                contentHtml += `</ul>`;
+            });
+            document.getElementById('adv-content').innerHTML = contentHtml;
+        }
+
+        // Garante que o script rode apenas após o DOM carregar
+        window.addEventListener('DOMContentLoaded', renderProfile);
+
+    </script>
+
+</body>
+
+</html>
